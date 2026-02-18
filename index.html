@@ -12,10 +12,13 @@
     --crimson-light: #C4354A;
     --gold: #C9A84C;
     --gold-light: #E8CC7A;
-    --cream: #FAF6EF;
-    --dark: #1A0A0D;
+    --cream: #F7F3EC;
+    --dark: #2C1810;
+    --text-main: #3D2B1F;
+    --text-body: #4E3B30;
+    --text-light: #6B5244;
     --muted: #7A5C62;
-    --card-bg: #fff;
+    --card-bg: #FFFCF8;
     --section-bg: #FDF9F4;
   }
 
@@ -24,9 +27,10 @@
   body {
     font-family: 'Tajawal', sans-serif;
     background: var(--cream);
-    color: var(--dark);
+    color: var(--text-main);
     overflow-x: hidden;
     direction: rtl;
+    line-height: 1.8;
   }
 
   /* ========== HEADER ========== */
@@ -239,7 +243,7 @@
   }
 
   .card-body p {
-    color: #4A3A3E;
+    color: var(--text-body);
     line-height: 2;
     font-size: 0.97rem;
     margin-bottom: 16px;
@@ -299,8 +303,8 @@
 
   .info-box p, .info-box li {
     font-size: 0.93rem;
-    color: #3A3A3A;
-    line-height: 1.8;
+    color: var(--text-body);
+    line-height: 1.9;
   }
 
   .info-box ul { padding-right: 20px; }
@@ -394,7 +398,7 @@
     flex-shrink: 0;
   }
 
-  .step-text { font-size: 0.95rem; color: #3A2A2D; line-height: 1.7; padding-top: 4px; }
+  .step-text { font-size: 0.95rem; color: var(--text-body); line-height: 1.8; padding-top: 4px; }
 
   /* ========== HIGHLIGHT BOX ========== */
   .highlight-cta {
@@ -415,7 +419,7 @@
     transition: opacity 0.6s ease, transform 0.6s cubic-bezier(0.16,1,0.3,1);
   }
 
-  .highlight-cta p { line-height: 1.8; margin-bottom: 10px; }
+  .highlight-cta p { line-height: 1.8; margin-bottom: 10px; color: #fff; }
   .highlight-cta .phone {
     font-size: 1.4rem;
     font-weight: 900;
@@ -626,6 +630,162 @@
 
   .back-top.show { opacity: 1; }
   .back-top:hover { transform: translateY(-4px); background: var(--crimson-dark); }
+
+  /* ========== ACCORDION TOC ========== */
+  .toc-wrapper {
+    background: linear-gradient(135deg, #FFF8F0, #FFF3E0);
+    border: 1px solid rgba(201,168,76,0.35);
+    border-right: 4px solid var(--gold);
+    border-radius: 14px;
+    margin: 0 0 28px 0;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(139,26,43,0.07);
+  }
+
+  .toc-toggle {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 22px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: 'Amiri', serif;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--crimson-dark);
+    direction: rtl;
+    text-align: right;
+    transition: background 0.2s;
+  }
+
+  .toc-toggle:hover { background: rgba(201,168,76,0.12); }
+
+  .toc-toggle-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .toc-icon {
+    width: 28px;
+    height: 28px;
+    background: linear-gradient(135deg, var(--crimson), var(--crimson-light));
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+
+  .toc-arrow {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(139,26,43,0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    color: var(--crimson);
+    transition: transform 0.35s cubic-bezier(0.4,0,0.2,1), background 0.2s;
+    flex-shrink: 0;
+  }
+
+  .toc-badge {
+    background: var(--crimson);
+    color: white;
+    font-size: 0.72rem;
+    font-family: 'Tajawal', sans-serif;
+    padding: 2px 9px;
+    border-radius: 20px;
+    font-weight: 600;
+    margin-right: 4px;
+  }
+
+  .toc-toggle[aria-expanded="false"] .toc-status { display: inline; }
+  .toc-toggle[aria-expanded="true"] .toc-status { display: none; }
+  .toc-hide-label { display: none; }
+  .toc-toggle[aria-expanded="true"] .toc-hide-label { display: inline; }
+  .toc-toggle[aria-expanded="true"] .toc-arrow { transform: rotate(180deg); background: rgba(139,26,43,0.18); }
+
+  .toc-body {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.45s cubic-bezier(0.4,0,0.2,1), padding 0.35s ease;
+    padding: 0 22px;
+  }
+
+  .toc-body.open {
+    max-height: 600px;
+    padding: 4px 22px 18px;
+  }
+
+  .toc-divider {
+    height: 1px;
+    background: linear-gradient(90deg, var(--gold), transparent);
+    margin: 0 22px;
+    opacity: 0.5;
+  }
+
+  .toc-list {
+    list-style: none;
+    counter-reset: toc-counter;
+  }
+
+  .toc-list li {
+    counter-increment: toc-counter;
+    border-bottom: 1px dashed rgba(201,168,76,0.25);
+  }
+
+  .toc-list li:last-child { border-bottom: none; }
+
+  .toc-list a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 9px 4px;
+    text-decoration: none;
+    color: var(--text-body);
+    font-size: 0.92rem;
+    transition: all 0.25s;
+    border-radius: 6px;
+  }
+
+  .toc-list a:hover {
+    color: var(--crimson);
+    padding-right: 10px;
+    background: rgba(139,26,43,0.04);
+  }
+
+  .toc-list a::before {
+    content: counter(toc-counter);
+    min-width: 24px;
+    height: 24px;
+    background: linear-gradient(135deg, var(--gold), #B8932A);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    flex-shrink: 0;
+    font-family: 'Tajawal', sans-serif;
+  }
+
+  .toc-list a .toc-arrow-link {
+    margin-right: auto;
+    color: var(--gold);
+    font-size: 0.8rem;
+    opacity: 0;
+    transition: opacity 0.2s;
+  }
+
+  .toc-list a:hover .toc-arrow-link { opacity: 1; }
 </style>
 </head>
 <body>
@@ -670,12 +830,42 @@
       </div>
       <div class="card-body">
 
-        <div class="info-box gold from-right" data-animate="right">
+        <!-- ===== جدول المحتويات ACCORDION ===== -->
+        <div class="toc-wrapper">
+          <button class="toc-toggle" aria-expanded="false" onclick="toggleTOC(this)">
+            <div class="toc-toggle-left">
+              <span class="toc-icon">📋</span>
+              <span>جدول المحتويات</span>
+              <span class="toc-badge">7 أقسام</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px">
+              <span style="font-family:'Tajawal',sans-serif;font-size:0.82rem;font-weight:500;color:var(--text-light)">
+                <span class="toc-status">[إظهار]</span>
+                <span class="toc-hide-label">[إخفاء]</span>
+              </span>
+              <span class="toc-arrow">▼</span>
+            </div>
+          </button>
+          <div class="toc-divider"></div>
+          <div class="toc-body">
+            <ol class="toc-list">
+              <li><a href="#a1-s1">1 أفضل أنواع حقن التخسيس<span class="toc-arrow-link">←</span></a></li>
+              <li><a href="#a1-s2">2 حقن التخسيس مونجارو<span class="toc-arrow-link">←</span></a></li>
+              <li><a href="#a1-s3">3 ما هي إبرة الاوزمبيك<span class="toc-arrow-link">←</span></a></li>
+              <li><a href="#a1-s4">4 هل حقن اوزمبك فعالة في انقاص الوزن؟<span class="toc-arrow-link">←</span></a></li>
+              <li><a href="#a1-s5">5 متي يبدأ مفعول ابر الأوزمبيك للتنحيف<span class="toc-arrow-link">←</span></a></li>
+              <li><a href="#a1-s6">6 ما هي حقن ويجوفي لإنفاص الوزن؟<span class="toc-arrow-link">←</span></a></li>
+              <li><a href="#a1-s7">7 كيف تساعد حقن ويجوفي (سيماجلوتايد) في إنقاص الوزن<span class="toc-arrow-link">←</span></a></li>
+            </ol>
+          </div>
+        </div>
+
+        <div id="a1-s1" class="info-box gold from-right" data-animate="right">
           <h4>🚀 لماذا تختار تقنية الألياف البصرية؟</h4>
           <p>خدمة شوفها بلس توفر أفضل تقنيات الاتصال عبر شبكة الألياف الضوئية مع DSL، مما يمنحك سرعات خيالية واستقراراً تاماً طوال اليوم.</p>
         </div>
 
-        <div class="section-heading" data-animate="up">📦 باقات موبايلي فاير في الرياض</div>
+        <div id="a1-s2" class="section-heading" data-animate="up">📦 باقات موبايلي فاير في الرياض</div>
 
         <table class="price-table" data-animate="up">
           <thead>
@@ -693,7 +883,7 @@
           </tbody>
         </table>
 
-        <div class="section-heading" data-animate="up">📋 خطوات الاشتراك في موبايلي فاير</div>
+        <div id="a1-s3" class="section-heading" data-animate="up">📋 خطوات الاشتراك في موبايلي فاير</div>
 
         <ul class="steps-list">
           <li data-animate="right"><span class="step-num">1</span><span class="step-text">التواصل على <strong>0581525591</strong> عبر رقم حيديك للاستفسارات</span></li>
@@ -705,7 +895,7 @@
 
         <div class="ornamental-divider" data-animate="fade">❋ ❋ ❋</div>
 
-        <div class="info-box rose from-left" data-animate="left">
+        <div id="a1-s4" class="info-box rose from-left" data-animate="left">
           <h4>💡 نصائح تحسين أداء موبايلي فاير</h4>
           <ul>
             <li>حافظ على الكابلات بعيداً عن المقاطعات</li>
@@ -714,7 +904,7 @@
           </ul>
         </div>
 
-        <div class="highlight-cta" data-animate="scale">
+        <div id="a1-s5" class="highlight-cta" data-animate="scale">
           <p>للتواصل والاستفسار والاشتراك في الخدمة</p>
           <div class="phone">📞 0581525591</div>
           <p style="font-size:0.85rem;margin-top:8px;opacity:0.8">موبايلي فاير الرياض — بفضل مستوى الخدمة المميزة</p>
@@ -732,12 +922,39 @@
       </div>
       <div class="card-body">
 
-        <div class="info-box gold from-right" data-animate="right">
+        <!-- جدول المحتويات -->
+        <div class="toc-wrapper" style="border-right-color: #C46A25; background: linear-gradient(135deg,#FFF8F0,#FFF0E0);">
+          <button class="toc-toggle" aria-expanded="false" onclick="toggleTOC(this)" style="color:#5A2E08">
+            <div class="toc-toggle-left">
+              <span class="toc-icon" style="background:linear-gradient(135deg,#7A4015,#C46A25)">🪵</span>
+              <span>جدول المحتويات</span>
+              <span class="toc-badge" style="background:#7A4015">4 أقسام</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px">
+              <span style="font-family:'Tajawal',sans-serif;font-size:0.82rem;font-weight:500;color:#8B5A30">
+                <span class="toc-status">[إظهار]</span>
+                <span class="toc-hide-label">[إخفاء]</span>
+              </span>
+              <span class="toc-arrow" style="color:#7A4015;background:rgba(122,64,21,0.1)">▼</span>
+            </div>
+          </button>
+          <div class="toc-divider"></div>
+          <div class="toc-body">
+            <ol class="toc-list">
+              <li><a href="#a2-s1" style="--toc-hover:#7A4015">من قطرة الزيت إلى بخور المجلس <span class="toc-arrow-link">←</span></a></li>
+              <li><a href="#a2-s2">ركن الأصالة — دهن العود والبخور <span class="toc-arrow-link">←</span></a></li>
+              <li><a href="#a2-s3">لماذا يُعدّ "بانافع" الخيار الأول؟ <span class="toc-arrow-link">←</span></a></li>
+              <li><a href="#a2-s4">زيارة المتجر <span class="toc-arrow-link">←</span></a></li>
+            </ol>
+          </div>
+        </div>
+
+        <div id="a2-s1" class="info-box gold from-right" data-animate="right">
           <h4>🌿 من قطرة الزيت إلى بخور المجلس</h4>
           <p>في الذاكرة السعودية، يرتبط اسم "بانافع" برائحة الصباحات الهادئة والجمعات التي يملأها الوقار. هنا تجد رحلة اكتشاف تبدأ من المصدر وتنتهي إلى علامة تجارية راسخة.</p>
         </div>
 
-        <div class="section-heading" data-animate="up" style="color: #7A4015; border-bottom-color: var(--gold);">🛤️ أروقة الفخامة: كيف تتنقل بين كنوز بانافع؟</div>
+        <div id="a2-s2" class="section-heading" data-animate="up" style="color: #7A4015; border-bottom-color: var(--gold);">🛤️ أروقة الفخامة: كيف تتنقل بين كنوز بانافع؟</div>
 
         <ul class="steps-list">
           <li data-animate="right">
@@ -754,12 +971,12 @@
           </li>
         </ul>
 
-        <div class="info-box mint from-left" data-animate="left">
+        <div id="a2-s3" class="info-box mint from-left" data-animate="left">
           <h4>⭐ لماذا يُعدّ "عبد المجيد بانافع" الخيار الأول للمحترفين؟</h4>
           <p>السر في "ثقافة المصدر": لا يبيعك مجهول المكونات، بل يضع بين يديك المواد الأولية لتركيب العطور بنفسك، مع مستوى من الشفافية يجعل اسم "بانافع" مرادفاً للثقة في سوق العود السعودي.</p>
         </div>
 
-        <div class="highlight-cta" data-animate="scale" style="background: linear-gradient(135deg, #4A2508, #7A4015);">
+        <div id="a2-s4" class="highlight-cta" data-animate="scale" style="background: linear-gradient(135deg, #4A2508, #7A4015);">
           <p>في عالم العطور، الرائحة هي الكلمة — اجعل كلماتك فواحة</p>
           <p style="font-size:1rem;font-weight:700;color:var(--gold-light);margin-top:8px">🏪 منجر عبد المجيد بانافع للعود (BANAFA OUD)</p>
         </div>
@@ -776,23 +993,51 @@
       </div>
       <div class="card-body">
 
+        <!-- جدول المحتويات -->
+        <div class="toc-wrapper" style="border-right-color:#2A5F8F;background:linear-gradient(135deg,#F0F6FF,#E5EEFF)">
+          <button class="toc-toggle" aria-expanded="false" onclick="toggleTOC(this)" style="color:#1A3A5C">
+            <div class="toc-toggle-left">
+              <span class="toc-icon" style="background:linear-gradient(135deg,#1A3A5C,#2A5F8F)">🏠</span>
+              <span>جدول المحتويات</span>
+              <span class="toc-badge" style="background:#1A3A5C">5 أقسام</span>
+            </div>
+            <div style="display:flex;align-items:center;gap:8px">
+              <span style="font-family:'Tajawal',sans-serif;font-size:0.82rem;font-weight:500;color:#2A4F7A">
+                <span class="toc-status">[إظهار]</span>
+                <span class="toc-hide-label">[إخفاء]</span>
+              </span>
+              <span class="toc-arrow" style="color:#1A3A5C;background:rgba(26,58,92,0.1)">▼</span>
+            </div>
+          </button>
+          <div class="toc-divider" style="background:linear-gradient(90deg,#2A5F8F,transparent)"></div>
+          <div class="toc-body">
+            <ol class="toc-list">
+              <li><a href="#a3-s1">تنبيه مهم قبل التعاقد <span class="toc-arrow-link">←</span></a></li>
+              <li><a href="#a3-s2">العمالة المنزلية في المدينة المنورة <span class="toc-arrow-link">←</span></a></li>
+              <li><a href="#a3-s3">عاملات بالشهر الرياض <span class="toc-arrow-link">←</span></a></li>
+              <li><a href="#a3-s4">عاملات بالشهر الدمام <span class="toc-arrow-link">←</span></a></li>
+              <li><a href="#a3-s5">نصائح مهمة قبل التعاقد <span class="toc-arrow-link">←</span></a></li>
+            </ol>
+          </div>
+        </div>
+
         <p>يزداد الاهتمام بخدمات العمالة المنزلية في مختلف مناطق المملكة كمدينة الدمام بسبب أسلوب الحياة المتطور وارتفاع الحاجة إلى الدعم اليومي. إليك كل ما تحتاج معرفته قبل اتخاذ قرارك.</p>
 
-        <div class="info-box rose from-right" data-animate="right">
+        <div id="a3-s1" class="info-box rose from-right" data-animate="right">
           <h4>⚠️ تنبيه مهم</h4>
           <p>لا تُعطِ أي عربون للعاملة قبل التأكد من الوثائق والأوراق الرسمية. التحقق المسبق يحميك من النصب والاحتيال. اتصل بالجهات الرسمية للتحقق دائماً.</p>
         </div>
 
-        <div class="section-heading" data-animate="up" style="color: #1A3A5C; border-bottom-color: #2A5F8F;">🏙️ العمالة المنزلية الشهرية في المدينة المنورة</div>
-        <p style="color:#4A3A3E;line-height:2;font-size:0.95rem">في المدينة المنورة، الطلب على الخادمات الماهرات بارتفاع ملحوظ مع بحث العائلات عن خبرات محددة تناسب نمط حياتها، مع وجود ضمانات عقدية وإشراف أسري.</p>
+        <div id="a3-s2" class="section-heading" data-animate="up" style="color: #1A3A5C; border-bottom-color: #2A5F8F;">🏙️ العمالة المنزلية الشهرية في المدينة المنورة</div>
+        <p style="color:var(--text-body);line-height:2;font-size:0.95rem">في المدينة المنورة، الطلب على الخادمات الماهرات بارتفاع ملحوظ مع بحث العائلات عن خبرات محددة تناسب نمط حياتها، مع وجود ضمانات عقدية وإشراف أسري.</p>
 
-        <div class="section-heading" data-animate="up" style="color: #1A3A5C; border-bottom-color: #2A5F8F;">🏙️ عاملات بالشهر الرياض</div>
+        <div id="a3-s3" class="section-heading" data-animate="up" style="color: #1A3A5C; border-bottom-color: #2A5F8F;">🏙️ عاملات بالشهر الرياض</div>
 
         <div class="info-box blue from-left" data-animate="left">
           <p>في الرياض، تشهد خدمات الضيافة والعمالة اليومية ازدهاراً بسبب نمط المعيشة المريح. شريطة التأكد من صحة الوثائق والتدريب المسبق والتواصل المباشر مع المكتب المعتمد.</p>
         </div>
 
-        <div class="section-heading" data-animate="up" style="color: #1A3A5C; border-bottom-color: #2A5F8F;">🏙️ عاملات بالشهر الدمام</div>
+        <div id="a3-s4" class="section-heading" data-animate="up" style="color: #1A3A5C; border-bottom-color: #2A5F8F;">🏙️ عاملات بالشهر الدمام</div>
 
         <ul class="steps-list">
           <li data-animate="right">
@@ -809,7 +1054,7 @@
           </li>
         </ul>
 
-        <div class="section-heading" data-animate="up" style="color: #1A3A5C; border-bottom-color: #2A5F8F;">📋 نصائح مهمة قبل التعاقد</div>
+        <div id="a3-s5" class="section-heading" data-animate="up" style="color: #1A3A5C; border-bottom-color: #2A5F8F;">📋 نصائح مهمة قبل التعاقد</div>
 
         <div class="info-box gold from-right" data-animate="right">
           <ul>
@@ -929,6 +1174,37 @@
     backTop.classList.toggle('show', scrollTop > 400);
   });
 
+  // ========== ACCORDION TOC ==========
+  function toggleTOC(btn) {
+    const isOpen = btn.getAttribute('aria-expanded') === 'true';
+    const body = btn.closest('.toc-wrapper').querySelector('.toc-body');
+    btn.setAttribute('aria-expanded', !isOpen);
+    body.classList.toggle('open', !isOpen);
+  }
+
+  // ========== SMOOTH SCROLL for TOC links ==========
+  document.addEventListener('click', function(e) {
+    const link = e.target.closest('a[href^="#"]');
+    if (!link) return;
+    const target = document.querySelector(link.getAttribute('href'));
+    if (!target) return;
+    e.preventDefault();
+    const offset = 80;
+    const top = target.getBoundingClientRect().top + window.scrollY - offset;
+
+    // Flash highlight on target
+    target.style.transition = 'outline 0s';
+    target.style.outline = '3px solid rgba(201,168,76,0.7)';
+    target.style.borderRadius = '8px';
+    setTimeout(() => {
+      target.style.outline = '3px solid transparent';
+      target.style.transition = 'outline 0.8s ease';
+      setTimeout(() => { target.style.outline = ''; target.style.transition = ''; }, 900);
+    }, 600);
+
+    window.scrollTo({ top, behavior: 'smooth' });
+  });
+
   // ========== INTERSECTION OBSERVER ==========
   const observerOptions = { threshold: 0.12, rootMargin: '0px 0px -40px 0px' };
 
@@ -960,52 +1236,6 @@
   selectors.forEach(sel => {
     document.querySelectorAll(sel).forEach(el => observer.observe(el));
   });
-</script>
-<script>
-
-(function() {
-    'use strict';
-    document.addEventListener('contextmenu', function(e) {
-        e.preventDefault();
-    });
-
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'F12' || e.keyCode === 123) {
-            e.preventDefault();
-            return false;
-        }
-
-        if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) {
-            e.preventDefault();
-            return false;
-        }
-
-   if (e.ctrlKey && (e.key === 'u' || e.keyCode === 85)) {
-        e.preventDefault();
-        return false;
-    }
-    });
-
-    const devToolsCheck = function() {
-        if (window.console && window.console.time) {
-                (function() {
-                    (function() {
-                        debugger;
-                    }).apply(this, ['alwaysOn']);
-                })();
-         
-        }
-    };
-    
-
-    setInterval(devToolsCheck, 1000);
-
-
-    document.addEventListener('copy', function(e) {
-        e.preventDefault();
-    });
-
-})();
 </script>
 </body>
 </html>
