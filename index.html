@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>مدونة قبيلة الشبان بني مالك</title>
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
-<style>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>مدونة قبيلة الشبان بني مالك</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&family=Amiri:wght@400;700&display=swap"
+            rel="stylesheet">
+        <style>
   :root {
     --crimson: #8B1A2B;
     --crimson-dark: #5C0F1B;
@@ -28,11 +30,16 @@
     font-family: 'Tajawal', sans-serif;
     background: var(--cream);
     color: var(--text-main);
-    overflow-x: hidden;
-    direction: rtl;
-    line-height: 1.8;
-  }
+   scroll-behavior: smooth;
 
+  }
+  html{
+ overflow-x: hidden;
+     direction: rtl;
+  }
+  li{
+    list-style: none;
+  }
   /* HEADER */
   header {
     background: linear-gradient(135deg, var(--crimson-dark) 0%, var(--crimson) 60%, #A0243A 100%);
@@ -744,7 +751,7 @@
   @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
 
   @media (max-width: 768px) {
-    .main-grid { grid-template-columns: 1fr; padding: 30px 20px; }
+    .main-grid { grid-template-columns: 1fr; padding: 0 0; max-width: 1400px; }
     .header-top { padding: 10px 20px; }
     .header-main { padding: 30px 20px; }
     nav { padding: 0 20px 20px; }
@@ -894,651 +901,877 @@
   strong{
     line-height: 1.8; color: var(--crimson-light); font-size: 0.95rem;
   }
+   .green-price-table {
+    width: 100%;
+    border-collapse: collapse; /* دمج الحدود */
+    margin: 20px 0;
+    direction: rtl;
+    font-family: 'Tajawal', sans-serif;
+    border: 1px solid #99c2a2; /* إطار خارجي أخضر */
+  }
+
+  /* تنسيق رأس الجدول (العناوين) */
+  .green-price-table th {
+    background-color: #ccebc5; /* خلفية خضراء فاتحة مثل الصورة */
+    color: #000; /* نص أسود */
+    padding: 15px 10px;
+    border: 1px solid #99c2a2; /* حدود الخلايا */
+    font-weight: 700;
+    font-size: 1rem;
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  /* تنسيق خلايا الجسم */
+  .green-price-table td {
+    padding: 15px 10px;
+    border: 1px solid #99c2a2; /* حدود الخلايا */
+    text-align: center;
+    color: #333;
+    vertical-align: middle;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    background-color: #fff;
+  }
+
+  /* جعل الصفوف الزوجية بلون أفتح قليلاً لجمالية الجدول */
+  .green-price-table tr:nth-child(even) td {
+    background-color: #f4fbf4;
+  }
+
+  /* تنسيق السعر ليكون بارزاً */
+  .green-price-table strong {
+    color: #2e7d32; /* أخضر غامق للسعر */
+    font-size: 1.1rem;
+  }
 </style>
-</head>
-<body>
+    </head>
+    <body>
 
-<div class="scroll-progress" id="scrollProgress"></div>
-<button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
+        <div class="scroll-progress" id="scrollProgress"></div>
+        <button class="back-top" id="backTop"
+            onclick="window.scrollTo({top:0,behavior:'smooth'})">↑</button>
 
-<!-- HEADER -->
-<header>
-  <div class="header-top">
-    <span>📅 فبراير 2026</span>
-    <div style="display:flex;gap:16px">
-      <a href="#">الرئيسية</a>
-      <a href="#">اتصل بنا</a>
-    </div>
-  </div>
-  <div class="header-main">
-    <h1 class="blog-title">مدونة قبيلة الشبان بني مالك</h1>
-    <div class="gold-line"></div>
-    <p class="blog-subtitle">منصة تهتم بتوثيق تاريخ وموروث قبيلة الشبان، وتُبرز إنجازاتهم وقيمهم العريقة — أخبار الفرق، المناسبات، الأدب الشعبي، والتراث الأصيل.</p>
-  </div>
-  <nav>
-    <a href="#">الرئيسية</a>
-    <a href="#">خدمات</a>
-    <a href="#">عطور وعود</a>
-    <a href="#">عمالة منزلية</a>
-    <a href="#">تقنية</a>
-    <a href="#">التراث</a>
-    <a href="#">تواصل</a>
-  </nav>
-</header>
-
-<!-- MAIN CONTENT -->
-<div class="main-grid">
-  <main>
-
-    <!-- ===== ARTICLE 1: خدمة شوفها بلس ===== -->
-    <article class="article-card" data-animate="up" id="art1">
-      <div class="card-header">
-        <div class="card-date">📅 فبراير 15, 2026</div>
-        <h2 class="card-title">خدمة شوفها بلس </h2>
-      </div>
-      <div class="card-body">
-
-        <!-- جدول المحتويات -->
-        <div class="toc-wrapper">
-          <button class="toc-toggle" aria-expanded="false" onclick="toggleTOC(this)">
-            <div class="toc-toggle-left">
-              <span class="toc-icon">📋</span>
-              <span>جدول المحتويات</span>
-              <span class="toc-badge">7 أقسام</span>
+        <!-- HEADER -->
+        <header>
+            <div class="header-top">
+                <span>📅 فبراير 2026</span>
+                <div style="display:flex;gap:16px">
+                    <a href="#">الرئيسية</a>
+                    <a href="#">اتصل بنا</a>
+                </div>
             </div>
-            <div style="display:flex;align-items:center;gap:8px">
-              <span style="font-family:'Tajawal',sans-serif;font-size:0.82rem;font-weight:500;color:var(--text-light)">
-                <span class="toc-status">[إظهار]</span>
-                <span class="toc-hide-label">[إخفاء]</span>
-              </span>
-              <span class="toc-arrow">▼</span>
+            <div class="header-main">
+                <h1 class="blog-title">مدونة قبيلة الشبان بني مالك</h1>
+                <div class="gold-line"></div>
+                <p class="blog-subtitle">منصة تهتم بتوثيق تاريخ وموروث قبيلة
+                    الشبان، وتُبرز إنجازاتهم وقيمهم العريقة — أخبار الفرق،
+                    المناسبات، الأدب الشعبي، والتراث الأصيل.</p>
             </div>
-          </button>
-          <div class="toc-divider"></div>
-          <div class="toc-body">
-            <ol class="toc-list">
-              <li><a href="#n1-s1">ما هي خدمة شوفها بلس؟ <span class="toc-arrow-link">←</span></a></li>
-              <li><a href="#n1-s2">لماذا تختار تقنية الألياف البصرية؟ <span class="toc-arrow-link">←</span></a></li>
-              <li><a href="#n1-s3">باقات موبايلي فاير في الرياض <span class="toc-arrow-link">←</span></a></li>
-              <li><a href="#n1-s4">خطوات الاشتراك في موبايلي فاير <span class="toc-arrow-link">←</span></a></li>
-              <li><a href="#n1-s5">نصائح تحسين أداء موبايلي فاير <span class="toc-arrow-link">←</span></a></li>
-              <li><a href="#n1-s6">مقارنة موبايلي فاير مقابل المنافسين <span class="toc-arrow-link">←</span></a></li>
-              <li><a href="#n1-s7">مستقبل الإنترنت مع موبايلي <span class="toc-arrow-link">←</span></a></li>
-            </ol>
-          </div>
+            <nav>
+                <a href="#">الرئيسية</a>
+                <a href="#">خدمات</a>
+                <a href="#">عطور وعود</a>
+                <a href="#">عمالة منزلية</a>
+                <a href="#">تقنية</a>
+                <a href="#">التراث</a>
+                <a href="#">تواصل</a>
+            </nav>
+        </header>
+
+        <!-- MAIN CONTENT -->
+        <div class="main-grid">
+            <main>
+
+                <!-- ===== ARTICLE 1: خدمة شوفها بلس ===== -->
+                <article class="article-card" data-animate="up" id="art1">
+                    <div class="card-header">
+                        <div class="card-date">📅 فبراير 15, 2026</div>
+                        <h2 class="card-title">خدمة شوفها بلس </h2>
+                    </div>
+                    <div class="card-body">
+
+                        <!-- جدول المحتويات -->
+                        <div class="toc-wrapper">
+                            <button class="toc-toggle" aria-expanded="true"
+                                onclick="toggleTOC(this)">
+                                <div class="toc-toggle-left">
+                                    <span class="toc-icon">📋</span>
+                                    <span>جدول المحتويات</span>
+                                    <span class="toc-badge">7 أقسام</span>
+                                </div>
+                                <div
+                                    style="display:flex;align-items:center;gap:8px">
+                                    <span
+                                        style="font-family:'Tajawal',sans-serif;font-size:0.82rem;font-weight:500;color:var(--text-light)">
+                                        <span class="toc-status">[إظهار]</span>
+                                        <span
+                                            class="toc-hide-label">[إخفاء]</span>
+                                    </span>
+                                    <span class="toc-arrow">▼</span>
+                                </div>
+                            </button>
+                            <div class="toc-divider"></div>
+                            <div class="toc-body open">
+                                <ol class="toc-list">
+                                    <li><a href="#n1-s1">ما هي خدمة شوفها بلس؟
+                                            <span
+                                                class="toc-arrow-link">←</span></a></li>
+                                    <li><a href="#n1-s2">لماذا تختار تقنية
+                                            الألياف البصرية؟ <span
+                                                class="toc-arrow-link">←</span></a></li>
+                                    <li><a href="#n1-s3">باقات موبايلي فاير في
+                                            الرياض <span
+                                                class="toc-arrow-link">←</span></a></li>
+                                    <li><a href="#n1-s4">خطوات الاشتراك في
+                                            موبايلي فاير <span
+                                                class="toc-arrow-link">←</span></a></li>
+                                    <li><a href="#n1-s5">نصائح تحسين أداء
+                                            موبايلي فاير <span
+                                                class="toc-arrow-link">←</span></a></li>
+                                    <li><a href="#n1-s6">مقارنة موبايلي فاير
+                                            مقابل المنافسين <span
+                                                class="toc-arrow-link">←</span></a></li>
+                                    <li><a href="#n1-s7">مستقبل الإنترنت مع
+                                            موبايلي <span
+                                                class="toc-arrow-link">←</span></a></li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div id="n1-s2" class="section-heading"
+                            data-animate="up">🚀 خدمة الإنترنت فائقة
+                            السرعة</div>
+
+                        <p>
+                            مع تزايد الاعتماد على الإنترنت في حياتنا اليومية،
+                            سواء لأغراض العمل أو الترفيه أو التواصل، أصبحت
+                            الحاجة إلى اتصال سريع وموثوق أمرًا ضروريًا. تقدم
+                            شركة موبايلي في الرياض خدمة <strong
+                                style="color: #D6336C;">موبايلي فايبر</strong>
+                            التي تعتمد على تقنية الألياف البصرية المتطورة، لتوفر
+                            سرعات تصل إلى 1 جيجابت في الثانية. هذه الخدمة مصممة
+                            لتلبية متطلبات الأفراد والشركات على حد سواء، مع
+                            استقرار عالٍ يضمن تجربة إنترنت بلا انقطاع. للاستفادة
+                            من هذه الخدمة، يمكنك التواصل مع مندوب موبايلي فايبر
+                            عبر الرقم <strong
+                                style="color: #D6336C;">0581525591</strong> أو
+                            من خلال <strong
+                                style="color: #D6336C;">واتساب</strong> للحصول
+                            على استشارة مخصصة وتركيب الخدمة بسهولة.
+                        </p> <div id="n1-s1" class="info-box gold from-right"
+                            data-animate="right">
+                            <h4>🌐 ما هي خدمة شوفها بلس؟</h4>
+                            <p>تتميز تقنية الألياف البصرية بقدرتها على نقل
+                                البيانات باستخدام الضوء، مما يجعلها متفوقة على
+                                الكابلات التقليدية مثل النحاس من حيث السرعة
+                                والكفاءة. سواء كنت تستمتع ببث الأفلام بدقة عالية
+                                أو تحتاج إلى اتصال قوي للألعاب الإلكترونية، فإن
+                                هذه الخدمة هي الخيار الأمثل.</p>
+                        </div>
+
+                        <div id="n1-s2" class="section-heading"
+                            data-animate="up">🚀 لماذا تختار تقنية الألياف
+                            البصرية مع شوفها بلس؟</div>
+                        <p
+                            style="color:var(--text-body);line-height:2;font-size:0.95rem;margin-bottom:16px">تعتمد
+                            الألياف البصرية على نقل البيانات عبر نبضات ضوئية
+                            داخل ألياف زجاجية رفيعة، مما يتيح سرعات فائقة تفوق
+                            التقنيات القديمة مثل DSL. مع موبايلي فايبر، تحصل على
+                            إنترنت بسرعة تصل إلى 1 جيجابت/ث، مثالي لتحميل
+                            الملفات الضخمة، بث الفيديو المباشر، والألعاب عبر
+                            الإنترنت.</p>
+                        <ul class="steps-list">
+                            <li data-animate="right"><span class="step-num"
+                                    style="background:linear-gradient(135deg,#0d6e5a,#1aad8a)">✓</span><span
+                                    class="step-text"><strong>سرعة
+                                        استثنائية:</strong> تحميل ورفع سريع في
+                                    لحظات.</span></li>
+                            <li data-animate="right" data-delay="100"><span
+                                    class="step-num"
+                                    style="background:linear-gradient(135deg,#0d6e5a,#1aad8a)">✓</span><span
+                                    class="step-text"><strong>اتصال
+                                        مستقر:</strong>أداء ثابت حتى مع عدة
+                                    أجهزة متصلة.</span></li>
+                            <li data-animate="right" data-delay="200"><span
+                                    class="step-num"
+                                    style="background:linear-gradient(135deg,#0d6e5a,#1aad8a)">✓</span><span
+                                    class="step-text"><strong>حماية
+                                        متطورة:</strong>مقاومة للتداخلات
+                                    والاختراق.</span></li>
+                        </ul>
+                        <p data-animate="right" data-delay="300"><span>للاستمتاع
+                                بهذه المزايا في الرياض، تواصل مع مندوب موبايلي
+                                فايبر على.
+                                <strong>0581525591.</strong></span></p>
+
+                        <div id="n1-s2" class="section-heading"
+                            data-animate="up">مندوب موبايلي فايبر في خدمتك</div>
+
+                        <p>
+                            يلعب مندوب موبايلي فايبر دورًا حيويًا في تقديم تجربة
+                            إنترنت مثالية. يوفر لك دعمًا شخصيًا يشمل اختيار
+                            الباقة المناسبة، تنظيم التركيب، وحل أي تحديات تقنية.
+                            يمكنك الاتصال به مباشرة على
+                            <strong>0581525591</strong> للحصول على مساعدة فورية.
+
+                        </p>
+                        <div id="n1-s5" class="info-box rose from-left visible"
+                            data-animate="left">
+                            <ul>
+                                <li>مساعدتك في اختيار الباقة: حسب احتياجاتك من
+                                    السرعة.</li>
+                                <li>عروض خاصة: خصومات حصرية عبر المندوب.</li>
+                                <li>إدارة التركيب: متابعة العملية من البداية
+                                    للنهاية.</li>
+                                <li>دعم فني مستمر: حل المشكلات بسرعة.</li>
+                            </ul>
+                        </div>
+                        <p>تواصل على <strong>0581525591</strong> لضمان تجربة
+                            سلسة.</p>
+
+                        <div id="n1-s3" class="section-heading"
+                            data-animate="up">📦 باقات موبايلي فاير في
+                            الرياض</div>
+
+                        <table class="green-price-table" data-animate="up">
+                            <thead>
+                                <tr>
+                                    <th style="width: 15%;">الباقة</th>
+                                    <th style="width: 15%;">السرعة</th>
+                                    <th style="width: 15%;">السعر الشهري</th>
+                                    <th>الاستخدام</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>باقة 300 ميجابت</td>
+                                    <td>300 ميجابت/ث</td>
+                                    <td><strong>287 ريال</strong></td>
+                                    <td>اشتراك مجاني في خدمة تلفزيون
+                                        موبايلي</td>
+                                </tr>
+                                <tr>
+                                    <td>باقة 400 ميجابت</td>
+                                    <td>400 ميجابت/ث</td>
+                                    <td><strong>345 ريال</strong></td>
+                                    <td>تشمل 2 مقويات Mesh واي فاي اشتراك مجاني
+                                        في خدمة تلفزيون موبايلي وخدمة شوفها
+                                        بلس</td>
+                                </tr>
+                                <tr>
+                                    <td>باقة 500 ميجابت</td>
+                                    <td>500 ميجابت/ث</td>
+                                    <td><strong>322 ريال</strong></td>
+                                    <td>تشمل 3 مقويات Mesh واي فاي بناء على طلب
+                                        العميل ولمرة واحدة فقط للتأسيس الجديد -
+                                        تغطية داخلية + اشتراك مجاني في خدمة
+                                        تلفزيون موبايلي، خدمة شوفها بلس وخدمة
+                                        OSN Plus</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                        <div class="notice-box" data-animate="up">
+                            ⚠️ <strong>تنبيه:</strong> للاشتراك أو الاستفسار،
+                            اتصل بـ مندوب موبايلي فايبر على .
+                            <strong>0581525591</strong>.
+                        </div>
+
+                        <div id="n1-s4" class="section-heading"
+                            data-animate="up">📋 خطوات الاشتراك في موبايلي
+                            فاير</div>
+
+                        <ul class="steps-list">
+                            <li data-animate="right"><span
+                                    class="step-num">1</span><span
+                                    class="step-text">التواصل على
+                                    <strong>0581525591</strong>اتصل بالمندوب على
+                                    0581525591 وحدد احتياجاتك.</span></li>
+                            <li data-animate="right" data-delay="100"><span
+                                    class="step-num">2</span><span
+                                    class="step-text">اختر الباقة بناءً على
+                                    نصيحة المندوب.</span></li>
+                            <li data-animate="right" data-delay="200"><span
+                                    class="step-num">3</span><span
+                                    class="step-text">حدد موعدًا
+                                    للتركيب.</span></li>
+                            <li data-animate="right" data-delay="300"><span
+                                    class="step-num">4</span><span
+                                    class="step-text">استقبل فريق التركيب لتفعيل
+                                    الخدمة.</span></li>
+                            <li data-animate="right" data-delay="400"><span
+                                    class="step-num">5</span><span
+                                    class="step-text">تابع مع المندوب للتأكد من
+                                    رضَاك.</span></li>
+                        </ul>
+                        <p>لأي دعم إضافي، لا تتردد في الاتصال على
+                            <strong>0581525591</strong>.</p>
+                        <div class="ornamental-divider" data-animate="fade">❋ ❋
+                            ❋</div>
+
+                        <div id="n1-s5" class="info-box rose from-left"
+                            data-animate="left">
+                            <h4>💡 نصائح احترافية لتحسين أداء موبايلي فاير</h4>
+                            <ul>
+                                <li>حافظ على الكابلات بعيدًا عن الثني.</li>
+                                <li>نظف الراوتر باستمرار.</li>
+                                <li>أعد تشغيل الراوتر أحيانًا.</li>
+                                <li>تواصل على <strong>0581525591</strong> عند
+                                    الحاجة للدعم.</li>
+                            </ul>
+                        </div>
+                        <p>بهذه الطرق، ستضمن إنترنتًا سريعًا ومستقرًا.</p>
+                        <div id="n1-s6" class="section-heading"
+                            data-animate="up">⚖️ موبايلي فاير مقابل
+                            المنافسين</div>
+
+                        <table class="price-table compare-table"
+                            data-animate="up">
+                            <thead>
+                                <tr>
+                                    <th>المزود</th>
+                                    <th>السرعة القصوى</th>
+                                    <th>السعر</th>
+                                    <th>الدعم</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>موبايلي فاير</td>
+                                    <td>1 جيجابايت</td>
+                                    <td>230-920 ريال</td>
+                                    <td><span
+                                            class="compare-badge badge-green">دعم
+                                            شخصي عبر المندوب</span></td>
+                                </tr>
+                                <tr>
+                                    <td>سلام فايبر</td>
+                                    <td>500 ميجابت/ث</td>
+                                    <td>250-700 ريال</td>
+                                    <td><span
+                                            class="compare-badge badge-gold">دعم
+                                            هاتفي فقط</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>للمزيد من التفاصيل، اتصل على
+                            <strong>0581525591</strong>.</p>
+                        <div id="n1-s7" class="info-box mint from-left"
+                            data-animate="left">
+                            <h4>🔮 مستقبل الإنترنت مع موبايلي</h4>
+
+                            <p>تسعى موبايلي لتوسيع شبكة الألياف البصرية ورفع
+                                السرعات مستقبلًا. للحصول على آخر التحديثات،
+                                تواصل مع مندوب موبايلي فايبر على
+                                <strong>0581525591</strong>.</p>
+                        </div>
+
+                        <div class="highlight-cta" data-animate="scale">
+                            <p>للاشتراك والاستفسار والحصول على أفضل العروض
+                                الحصرية</p>
+                            <div class="phone">📞 0581525591</div>
+                            <p
+                                style="font-size:0.85rem;margin-top:8px;opacity:0.8">موبايلي
+                                فاير الرياض — اتصل الآن وابدأ رحلتك مع الإنترنت
+                                السريع</p>
+                        </div>
+
+                        <div class="share-bar">
+                            <span>شارك المقال:</span>
+                            <a class="share-btn wa" href="#">📱 واتساب</a>
+                            <a class="share-btn tw" href="#">🐦 تويتر</a>
+                            <a class="share-btn fb" href="#">📘 فيسبوك</a>
+                        </div>
+
+                        <a href="#" class="read-more">قراءة المزيد ←</a>
+                    </div>
+                </article>
+
+                <!-- ===== ARTICLE 2: عبد المجيد بانافع للعود ===== -->
+                <article class="article-card" data-animate="up" id="art2">
+                    <div class="card-header oud-header">
+                        <div class="card-date">📅 فبراير 17, 2026</div>
+                        <h2 class="card-title">عبد المجيد بانافع للعود حيث تكتمل
+                            فصول</h2>
+                    </div>
+                    <div class="card-body">
+
+                        <!-- جدول المحتويات -->
+                        <div class="toc-wrapper"
+                            style="border-right-color: #C46A25; background: linear-gradient(135deg,#FFF8F0,#FFF0E0);">
+                            <button class="toc-toggle" aria-expanded="true"
+                                onclick="toggleTOC(this)" style="color:#5A2E08">
+                                <div class="toc-toggle-left">
+                                    <span class="toc-icon"
+                                        style="background:linear-gradient(135deg,#7A4015,#C46A25)">🪵</span>
+                                    <span>جدول المحتويات</span>
+                                    <span class="toc-badge"
+                                        style="background:#7A4015">6
+                                        أقسام</span>
+                                </div>
+                                <div
+                                    style="display:flex;align-items:center;gap:8px">
+                                    <span
+                                        style="font-family:'Tajawal',sans-serif;font-size:0.82rem;font-weight:500;color:#8B5A30">
+                                        <span class="toc-status">[إظهار]</span>
+                                        <span
+                                            class="toc-hide-label">[إخفاء]</span>
+                                    </span>
+                                    <span class="toc-arrow"
+                                        style="color:#7A4015;background:rgba(122,64,21,0.1)">▼</span>
+                                </div>
+                            </button>
+                            <div class="toc-divider"></div>
+                            <div class="toc-body open">
+                                <ol class="toc-list">
+                                    <li><a href="#a2-s1">من قطرة الزيت إلى بخور
+                                            المجلس <span
+                                                class="toc-arrow-link">←</span></a></li>
+                                    <li><a href="#a2-s2">أروقة الفخامة — كنوز
+                                            بانافع <span
+                                                class="toc-arrow-link">←</span></a></li>
+                                    <li><a href="#a2-s3">لماذا يُعدّ بانافع
+                                            الخيار الأول؟ <span
+                                                class="toc-arrow-link">←</span></a></li>
+                                    <li><a href="#a2-s4">أبرز منتجات متجر بانافع
+                                            <span
+                                                class="toc-arrow-link">←</span></a></li>
+                                    <li><a href="#a2-s5">آراء العملاء ومراجعاتهم
+                                            <span
+                                                class="toc-arrow-link">←</span></a></li>
+                                    <li><a href="#a2-s6">زيارة المتجر والتواصل
+                                            <span
+                                                class="toc-arrow-link">←</span></a></li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <div class="info-box gold from-right"
+                            data-animate="right">
+                            <h4
+                                style="color: #7A4015; font-weight: 900; font-size: 18px;">عبد
+                                المجيد بانافع للعود: حيث تكتمل فصول "الكشخة" من
+                                قطرة الزيت إلى بخور المجلس</h4>
+                        </div>
+
+                        <p>في الذاكرة السعودية، يرتبط اسم "بانافع" برائحة
+                            الصباحات الهادئة، والجمعات التي يملأها الوقار. لكن
+                            في <strong style="color:#7A4015 ;">متجر عبد المجيد
+                                بانافع للعود (BANAFA OUD)</strong>، لم تعد القصة
+                            مجرد شراء زجاجة عطر، بل أصبحت رحلة احترافية تبدأ من
+                            المصدر. نحن نتحدث عن منصة رقمية صُممت لتكون
+                            "المختبر الأول" لكل من يبحث عن التميز، سواء كنت
+                            متذوقاً يبحث عن رائحة تليق به، أو طموحاً يسعى لبناء
+                            علامته التجارية الخاصة.</p>
+
+                        <div id="a2-s2" class="section-heading oud-accent"
+                            data-animate="up">🛤️ أروقة الفخامة: كيف تتنقل بين
+                            كنوز بانافع؟</div>
+
+                        <ul class="steps-list">
+                            <li data-animate="right">
+                                <span class="step-num"
+                                    style="background: linear-gradient(135deg,#7A4015,#C46A25);">1</span>
+                                <span class="step-text"><strong>ركن الأصالة —
+                                        دهن العود والبخور:</strong>هذا هو القسم
+                                    الذي يُبنى عليه الإرث. هنا تجد أفخم أنواع
+                                    دهن العود التي تُستخلص لتبقى رفيقة ثيابك
+                                    لأيام. أما في قسم البخور والعود، فالخيارات
+                                    تتجاوز مجرد خشب يحترق؛ إنها "خلطات سرية"
+                                    تعبق بروح الكرم السعودي، مختارة بعناية
+                                    لتناسب المباخر اليدوية والإلكترونية في أرقى
+                                    المجالس.</span>
+                            </li>
+                            <li data-animate="right" data-delay="100">
+                                <span class="step-num"
+                                    style="background: linear-gradient(135deg,#7A4015,#C46A25);">2</span>
+                                <span class="step-text"><strong>مختبر الإبداع —
+                                        الزيوت الخام والمستلزمات:</strong>هذا هو
+                                    التميز الحقيقي الذي ينفرد به المتجر. إذا كنت
+                                    تملك حساً ابتكارياً، فإن قسم الزيوت العطرية
+                                    الخام يفتح لك أبواب الاحتراف. هنا تقتني
+                                    المادة الخام بنقائها الكامل، ولتكتمل رحلتك،
+                                    وفرنا لك في أدوات ومستلزمات تركيب العطور كل
+                                    ما يحتاجه المصمم؛ من مخابير قياس وموازين
+                                    دقيقة وزجاجات فارغة، لتتحول غرفتك إلى مختبر
+                                    عطور عالمي.</span>
+                            </li>
+                            <li data-animate="right" data-delay="200">
+                                <span class="step-num"
+                                    style="background: linear-gradient(135deg,#7A4015,#C46A25);">3</span>
+                                <span class="step-text"><strong>لمسات الحداثة —
+                                        الزيوت الفرنسية والمسك:</strong>لمن يبحث
+                                    عن الرقي الباريسي بلمسة شرقية، يقدم قسم
+                                    الزيوت العطرية الفرنسية محاكاة لأشهر الروائح
+                                    العالمية بتركيز زيتي عالٍ يمنحك ثباتاً يتفوق
+                                    على العطور الجاهزة. ولا تنسَ اختتام جولتك
+                                    بزيارة عالم المسك المتنوع، حيث تلتقي البرودة
+                                    بالنظافة، لتمنحك شعور الانتعاش الذي لا
+                                    يغيب.</span>
+                            </li>
+                        </ul>
+
+                        <div id="a2-s3" class="info-box mint from-left"
+                            data-animate="left">
+                            <h4>⭐ لماذا يُعدّ "عبد المجيد بانافع" الخيار الأول
+                                للمحترفين؟</h4>
+                            <p>السر في <em>"ثقافة المصدر"</em>: لا يبيعك مجهول
+                                المكونات، بل يضع بين يديك المواد الأولية لتركيب
+                                العطور بنفسك، مع مستوى من الشفافية نادر في
+                                السوق. هذا يجعل اسم "بانافع" مرادفاً للثقة لدى
+                                كبار صانعي العطور في المملكة العربية السعودية
+                                ودول الخليج.</p>
+                        </div>
+
+                        <div id="a2-s6" class="highlight-cta oud-cta"
+                            data-animate="scale">
+                            <p>في عالم العطور، الرائحة هي الكلمة التي لا تُنسى.
+                                اجعل كلماتك فواحة، واصنع قصتك الخاصة مع كل ما
+                                يقدمه متجر عبد المجيد بانافع للعود.</p>
+                        </div>
+
+                        <div class="share-bar">
+                            <span>شارك المقال:</span>
+                            <a class="share-btn wa" href="#">📱 واتساب</a>
+                            <a class="share-btn tw" href="#">🐦 تويتر</a>
+                            <a class="share-btn fb" href="#">📘 فيسبوك</a>
+                        </div>
+
+                        <a href="#" class="read-more"
+                            style="background: linear-gradient(135deg,#7A4015,#C46A25)">قراءة
+                            المزيد ←</a>
+                    </div>
+                </article>
+
+                <!-- ===== ARTICLE 3: عاملات بالشهر الدمام ===== -->
+                <article class="article-card" data-animate="up" id="art3">
+                    <div class="card-header blue-header">
+                        <div class="card-date">📅 مارس 16, 2026</div>
+                        <h2 class="card-title">عاملات بالشهر الدمام لتنظيم
+                            المنزل</h2>
+                    </div>
+                    <div class="card-body">
+
+                        <!-- جدول المحتويات -->
+                        <div class="toc-wrapper blue-toc"
+                            style="border-right-color:#2A5F8F;background:linear-gradient(135deg,#F0F6FF,#E5EEFF)">
+                            <button class="toc-toggle" aria-expanded="true"
+                                onclick="toggleTOC(this)" style="color:#1A3A5C">
+                                <div class="toc-toggle-left">
+                                    <span class="toc-icon"
+                                        style="background:linear-gradient(135deg,#1A3A5C,#2A5F8F)">🏠</span>
+                                    <span>جدول المحتويات</span>
+                                    <span class="toc-badge"
+                                        style="background:#1A3A5C">7
+                                        أقسام</span>
+                                </div>
+                                <div
+                                    style="display:flex;align-items:center;gap:8px">
+                                    <span
+                                        style="font-family:'Tajawal',sans-serif;font-size:0.82rem;font-weight:500;color:#2A4F7A">
+                                        <span class="toc-status">[إظهار]</span>
+                                        <span
+                                            class="toc-hide-label">[إخفاء]</span>
+                                    </span>
+                                    <span class="toc-arrow"
+                                        style="color:#1A3A5C;background:rgba(26,58,92,0.1)">▼</span>
+                                </div>
+                            </button>
+                            <div class="toc-divider"
+                                style="background:linear-gradient(90deg,#2A5F8F,transparent)"></div>
+                            <div class="toc-body open">
+                                <ol class="toc-list">
+                                    <li><a href="#a3-s1">العمالة المنزلية
+                                            الشهرية في المدينة المنورة <span
+                                                class="toc-arrow-link">←</span></a></li>
+                                    <li><a href="#a3-s2">عاملات بالشهر الرياض
+                                            <span
+                                                class="toc-arrow-link">←</span></a></li>
+                                    <li><a href="#a3-s3">عاملات بالشهر الدمام
+                                            <span
+                                                class="toc-arrow-link">←</span></a></li>
+                                    <li><a href="#a3-s5">نصائح مهمة قبل التعاقد
+                                            <span
+                                                class="toc-arrow-link">←</span></a></li>
+                                    <li><a href="#a3-s6">أهمية الاحترام المتبادل
+                                            <span
+                                                class="toc-arrow-link">←</span></a></li>
+                                    <li><a href="#a3-s7">الأسئلة الشائعة <span
+                                                class="toc-arrow-link">←</span></a></li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <p>يزداد الاهتمام بخدمات العمالة المنزلية الشهرية في
+                            مختلف مدن المملكة. مع تطور أساليب الحياة وزيادة
+                            الالتزامات اليومية، أصبحت خدمات <span
+                                style="color: #1877F2;">شغالات بالشهر المدينة
+                                المنورة</span> وعاملات بالشهر الرياض وعاملات
+                            بالشهر الدمام خياراً مهماً لدى العديد من العائلات
+                            التي تحتاج إلى دعم ثابت ومنظم داخل المنزل.</p>
+
+                        <div id="a3-s1" class="info-box rose from-right"
+                            data-animate="right">
+                            <p>الاعتماد على العمالة المنزلية بنظام شهري يمنح
+                                الأسرة قدراً من الاستقرار، حيث تساعد العاملة في
+                                تنفيذ المهام اليومية مثل التنظيف والترتيب
+                                والعناية ببعض التفاصيل التي تتطلب وقتاً طويلاً.
+                            </p> </div>
+                            <div style="display: flex;align-items: center;justify-content: center; width: 100%;">
+                            <img style="width: 50%;"  src="images/ok.webp" alt="">
+                        </div>
+                            <div id="a3-s2" class="section-heading blue-accent"
+                            data-animate="up"> العمالة المنزلية الشهرية في
+                            المدينة المنورة</div>
+                        <p
+                            style="color:var(--text-body);line-height:2;font-size:0.95rem;margin-bottom:16px">في
+                            في المدينة المنورة، يزداد الطلب على خدمات شغالات
+                            بالشهر المدينة المنورة نتيجة التنوع السكاني وكثرة
+                            الأسر التي تبحث عن مساعدة منزلية موثوقة. كثير من
+                            العائلات تفضل هذا النوع من الخدمات لأنه يضمن وجود
+                            مساعدة منتظمة مع إمكانية تحديد المهام والأوقات بما
+                            يتناسب مع احتياجات الأسرة. اختيار العاملة المناسبة
+                            يعتمد على عدة عوامل مثل الخبرة السابقة، مستوى
+                            الالتزام، والقدرة على التواصل الجيد مع أفراد المنزل.
+                        </p>
+
+                        <div id="a3-s3" class="section-heading blue-accent"
+                            data-animate="up"> عاملات بالشهر الرياض</div>
+                        <div class="info-box blue from-left"
+                            data-animate="left">
+                            <h4>عاملات بالشهر الدمام</h4>
+                            <p>الدمام كذلك تشهد اهتماماً متزايداً بخدمات عاملات
+                                بالشهر الدمام، حيث تفضل العديد من الأسر الاعتماد
+                                على الدعم المنزلي المنتظم للحفاظ على نظافة
+                                المنزل وترتيبه بشكل دائم. البيئة الأسرية تحتاج
+                                أحياناً إلى شخص متخصص يساعد في الأعمال
+                                الروتينية، مما يتيح للعائلة التركيز على الأنشطة
+                                اليومية الأخرى. نجاح تجربة الاستعانة بعاملة
+                                شهرية يرتبط بوضوح التوقعات منذ البداية وتوفير
+                                بيئة عمل مناسبة تشجع على الاستمرارية.</p>
+                        </div>
+
+                        <div id="a3-s4" class="section-heading blue-accent"
+                            data-animate="up">نصائح مهمة قبل التعاقد</div>
+
+                        <div class="info-box gold from-right"
+                            data-animate="right">
+                            <ul>
+                                <li>عند التفكير في التعاقد مع شغالات بالشهر
+                                    المدينة المنورة أو عاملات بالشهر الرياض أو
+                                    عاملات بالشهر الدمام ، من الضروري الاهتمام
+                                    بعدة نقاط مهمة. أولها اختيار جهة موثوقة توفر
+                                    عمالة مدربة وذات خبرة، مع التأكد من استيفاء
+                                    جميع الإجراءات النظامية. كما يفضل إجراء
+                                    مقابلة مسبقة للتعرف على المهارات والتأكد من
+                                    توافقها مع متطلبات المنزل. التواصل الواضح
+                                    حول المهام اليومية وساعات العمل يساعد على
+                                    بناء علاقة عمل ناجحة ومستقرة.</li>
+                            </ul>
+                        </div>
+
+                        <div id="a3-s6" class="section-heading blue-accent"
+                            data-animate="up">🤝 أهمية الاحترام المتبادل</div>
+                        <p
+                            style="color:var(--text-body);line-height:2;font-size:0.95rem;margin-bottom:16px">ثقافة
+                            كذلك يلعب الاحترام المتبادل دوراً كبيراً في نجاح
+                            تجربة العمالة المنزلية الشهرية، حيث يسهم التعامل
+                            الإنساني الجيد في تحسين الأداء وخلق بيئة إيجابية
+                            داخل المنزل. من المفيد وضع جدول عمل واضح يحدد
+                            الأولويات اليومية لتجنب أي سوء فهم، مع منح العاملة
+                            الوقت الكافي للتأقلم مع طبيعة المنزل وروتين
+                            الأسرة.</p>
+
+                        <div id="a3-s7" class="section-heading blue-accent"
+                            data-animate="up">❓ الأسئلة الشائعة</div>
+
+                        <div class="faq-item" data-animate="up">
+                            <button class="faq-question"
+                                onclick="toggleFAQ(this)">
+                                ما أهمية العمالة المنزلية الشهرية؟
+                            </button>
+                            <div class="faq-answer">
+                                خدمات العمالة المنزلية الشهرية توفر حلاً عملياً
+                                للأسر التي تبحث عن تنظيم أفضل للحياة اليومية.
+                            </div>
+                        </div>
+
+                        <div class="faq-item" data-animate="up">
+                            <button class="faq-question"
+                                onclick="toggleFAQ(this)">
+                                كيف أختار العاملة المناسبة؟
+                            </button>
+                            <div class="faq-answer">
+                                الاختيار الصحيح والخطوات المنظمة يساعدان في
+                                الحصول على تجربة مريحة ومستقرة تلبي احتياجات
+                                الأسرة وتدعم نمط الحياة الحديث.
+
+                            </div>
+                        </div>
+
+                        <div class="highlight-cta blue-cta"
+                            data-animate="scale">
+                            <p>احترام التفاهم المتبادل يُسهم في القيام بالأعمال
+                                اليومية بشكل متميز، ويبني علاقة ثقة مطولة ذات
+                                قيمة حقيقية للجميع.</p>
+                            <p
+                                style="font-size:0.9rem;margin-top:10px;opacity:0.9">🏠
+                                ابحث دائماً عن المكاتب المرخصة عبر منصة مساند
+                                الرسمية — حقوقك محفوظة بالقانون</p>
+                        </div>
+
+                        <div class="share-bar">
+                            <span>شارك المقال:</span>
+                            <a class="share-btn wa" href="#">📱 واتساب</a>
+                            <a class="share-btn tw" href="#">🐦 تويتر</a>
+                            <a class="share-btn fb" href="#">📘 فيسبوك</a>
+                        </div>
+
+                        <a href="#" class="read-more blue-read-more">قراءة
+                            المزيد ←</a>
+                    </div>
+                </article>
+
+            </main>
+
+            <!-- SIDEBAR -->
+            <aside class="sidebar">
+
+                <div class="sidebar-widget" data-animate="left">
+                    <div class="widget-title">🔥 المشاركات الشائعة</div>
+                    <a href="#art1" class="related-item">
+                        <div class="related-dot"></div>
+                        <span>خدمة شوفها بلس — أفضل باقات الإنترنت السريع</span>
+                    </a>
+                    <a href="#art2" class="related-item">
+                        <div class="related-dot"></div>
+                        <span>عبد المجيد بانافع للعود — حيث تكتمل فصول
+                            الرائحة</span>
+                    </a>
+                    <a href="#art3" class="related-item">
+                        <div class="related-dot"></div>
+                        <span>عاملات بالشهر في الدمام لتنظيم المنزل</span>
+                    </a>
+                    <a href="#" class="related-item">
+                        <div class="related-dot"></div>
+                        <span>ميكروتيك مزود خدمة الإنترنت العربي الأول في
+                            تركيا</span>
+                    </a>
+                    <a href="#" class="related-item">
+                        <div class="related-dot"></div>
+                        <span>قصائد من تراث الشبان بني مالك</span>
+                    </a>
+                </div>
+
+                <div class="sidebar-widget" data-animate="left">
+                    <div class="widget-title">📰 آخر المقالات</div>
+                    <a href="#" class="related-item">
+                        <div class="related-dot"></div>
+                        <span>الصحة الطبيعية من منظور ابن سينا والطب
+                            الحديث</span>
+                    </a>
+                    <a href="#" class="related-item">
+                        <div class="related-dot"></div>
+                        <span>رحلة إلى تاريخ قبيلة الشبان بين الجبال
+                            والسهول</span>
+                    </a>
+                    <a href="#" class="related-item">
+                        <div class="related-dot"></div>
+                        <span>أفضل وصفات الخبز التقليدي على الطريقة
+                            القبلية</span>
+                    </a>
+                    <a href="#" class="related-item">
+                        <div class="related-dot"></div>
+                        <span>مستقبل الاتصالات في المملكة — رؤية 2030</span>
+                    </a>
+                </div>
+
+                <div class="sidebar-widget" data-animate="left">
+                    <div class="widget-title">🏷️ الوسوم</div>
+                    <div class="tag-cloud">
+                        <a class="tag" href="#">تراث</a>
+                        <a class="tag" href="#">إنترنت</a>
+                        <a class="tag" href="#">عطور</a>
+                        <a class="tag" href="#">عمالة</a>
+                        <a class="tag" href="#">خدمات</a>
+                        <a class="tag" href="#">قبيلة</a>
+                        <a class="tag" href="#">الرياض</a>
+                        <a class="tag" href="#">الدمام</a>
+                        <a class="tag" href="#">موبايلي</a>
+                        <a class="tag" href="#">بانافع</a>
+                        <a class="tag" href="#">عود</a>
+                        <a class="tag" href="#">تقنية</a>
+                        <a class="tag" href="#">مساند</a>
+                        <a class="tag" href="#">ألياف</a>
+                    </div>
+                </div>
+
+                <div class="sidebar-widget" data-animate="left"
+                    style="background: linear-gradient(135deg,#FFF9EC,#FFF4D6); border:1px solid rgba(201,168,76,0.3)">
+                    <div class="widget-title"
+                        style="color: #7A5000; border-bottom-color: var(--gold)">📞
+                        تواصل معنا</div>
+                    <p
+                        style="font-size:0.9rem;color:#4A3A00;line-height:1.8">للاستفسارات
+                        والتعاون والإعلانات، تواصل معنا عبر الأرقام المذكورة في
+                        المقالات أو عبر قنوات التواصل الاجتماعي.</p>
+                    <div style="text-align:center;margin-top:16px">
+                        <a href="#"
+                            style="display:inline-block;background:var(--crimson);color:white;padding:10px 24px;border-radius:30px;text-decoration:none;font-size:0.9rem;font-weight:600">تواصل
+                            الآن</a>
+                    </div>
+                </div>
+
+                <!-- INTERNET CTA -->
+                <div class="sidebar-widget" data-animate="left"
+                    style="background:linear-gradient(135deg,#0d6e5a,#1aad8a);border:none;">
+                    <p
+                        style="color:white;font-size:0.92rem;font-weight:700;margin-bottom:8px">📡
+                        شوفها بلس</p>
+                    <p
+                        style="color:rgba(255,255,255,0.85);font-size:0.85rem;line-height:1.8;margin-bottom:12px">اشترك
+                        اليوم في أسرع إنترنت بالألياف الضوئية</p>
+                    <a href="#"
+                        style="display:block;text-align:center;background:white;color:#0d6e5a;padding:9px;border-radius:25px;text-decoration:none;font-size:0.9rem;font-weight:700">📞
+                        0581525591</a>
+                </div>
+
+                <!-- OUD CTA -->
+                <div class="sidebar-widget" data-animate="left"
+                    style="background:linear-gradient(135deg,#4A2508,#7A4015);border:none;">
+                    <p
+                        style="color:var(--gold-light);font-size:0.92rem;font-weight:700;margin-bottom:8px">🪵
+                        بانافع للعود</p>
+                    <p
+                        style="color:rgba(255,255,255,0.85);font-size:0.85rem;line-height:1.8;margin-bottom:12px">اكتشف
+                        أجود أنواع دهن العود والبخور الأصيل</p>
+                    <a href="#"
+                        style="display:block;text-align:center;background:var(--gold);color:#4A2508;padding:9px;border-radius:25px;text-decoration:none;font-size:0.9rem;font-weight:700">🏪
+                        زيارة المتجر</a>
+                </div>
+
+            </aside>
         </div>
 
-           <div id="n1-s2" class="section-heading" data-animate="up">🚀 خدمة الإنترنت فائقة السرعة</div>
-
-
-<p >
-  مع تزايد الاعتماد على الإنترنت في حياتنا اليومية، سواء لأغراض العمل أو الترفيه أو التواصل، أصبحت الحاجة إلى اتصال سريع وموثوق أمرًا ضروريًا. تقدم شركة موبايلي في الرياض خدمة <strong style="color: #D6336C;">موبايلي فايبر</strong> التي تعتمد على تقنية الألياف البصرية المتطورة، لتوفر سرعات تصل إلى 1 جيجابت في الثانية. هذه الخدمة مصممة لتلبية متطلبات الأفراد والشركات على حد سواء، مع استقرار عالٍ يضمن تجربة إنترنت بلا انقطاع. للاستفادة من هذه الخدمة، يمكنك التواصل مع مندوب موبايلي فايبر عبر الرقم <strong style="color: #D6336C;">0581525591</strong> أو من خلال <strong style="color: #D6336C;">واتساب</strong> للحصول على استشارة مخصصة وتركيب الخدمة بسهولة.
-</p>        <div id="n1-s1" class="info-box gold from-right" data-animate="right">
-          <h4>🌐 ما هي خدمة شوفها بلس؟</h4>
-            <p>تتميز تقنية الألياف البصرية بقدرتها على نقل البيانات باستخدام الضوء، مما يجعلها متفوقة على الكابلات التقليدية مثل النحاس من حيث السرعة والكفاءة. سواء كنت تستمتع ببث الأفلام بدقة عالية أو تحتاج إلى اتصال قوي للألعاب الإلكترونية، فإن هذه الخدمة هي الخيار الأمثل.</p>
-        </div>
-
-        <div id="n1-s2" class="section-heading" data-animate="up">🚀 لماذا تختار تقنية الألياف البصرية مع شوفها بلس؟</div>
-        <p style="color:var(--text-body);line-height:2;font-size:0.95rem;margin-bottom:16px">تعتمد الألياف البصرية على نقل البيانات عبر نبضات ضوئية داخل ألياف زجاجية رفيعة، مما يتيح سرعات فائقة تفوق التقنيات القديمة مثل DSL. مع موبايلي فايبر، تحصل على إنترنت بسرعة تصل إلى 1 جيجابت/ث، مثالي لتحميل الملفات الضخمة، بث الفيديو المباشر، والألعاب عبر الإنترنت.</p>
-        <ul class="steps-list">
-          <li data-animate="right"><span class="step-num" style="background:linear-gradient(135deg,#0d6e5a,#1aad8a)">✓</span><span class="step-text"><strong>سرعة استثنائية:</strong> تحميل ورفع سريع في لحظات.</span></li>
-          <li data-animate="right" data-delay="100"><span class="step-num" style="background:linear-gradient(135deg,#0d6e5a,#1aad8a)">✓</span><span class="step-text"><strong>اتصال مستقر:</strong>أداء ثابت حتى مع عدة أجهزة متصلة.</span></li>
-          <li data-animate="right" data-delay="200"><span class="step-num" style="background:linear-gradient(135deg,#0d6e5a,#1aad8a)">✓</span><span class="step-text"><strong>حماية متطورة:</strong>مقاومة للتداخلات والاختراق.</span></li>
-        </ul>
-        <p data-animate="right" data-delay="300"><span >للاستمتاع بهذه المزايا في الرياض، تواصل مع مندوب موبايلي فايبر على. <strong>0581525591.</strong></span></p>
-
-
-
-           <div id="n1-s2" class="section-heading" data-animate="up">مندوب موبايلي فايبر في خدمتك</div>
-
-
-<p >
-يلعب مندوب موبايلي فايبر دورًا حيويًا في تقديم تجربة إنترنت مثالية. يوفر لك دعمًا شخصيًا يشمل اختيار الباقة المناسبة، تنظيم التركيب، وحل أي تحديات تقنية. يمكنك الاتصال به مباشرة على <strong>0581525591</strong> للحصول على مساعدة فورية.
-
-</p>   
-<div id="n1-s5" class="info-box rose from-left visible" data-animate="left">
-          <ul>
-            <li>مساعدتك في اختيار الباقة: حسب احتياجاتك من السرعة.</li>
-            <li>عروض خاصة: خصومات حصرية عبر المندوب.</li>
-            <li>إدارة التركيب: متابعة العملية من البداية للنهاية.</li>
-            <li>دعم فني مستمر: حل المشكلات بسرعة.</li>
-        </ul>
-    </div>
-    <p>تواصل على <strong>0581525591</strong>  لضمان تجربة سلسة.</p>
-
-        <div id="n1-s3" class="section-heading" data-animate="up">📦 باقات موبايلي فاير في الرياض</div>
-
-        <table class="price-table" data-animate="up">
-          <thead>
-            <tr>
-              <th>الباقة</th>
-              <th>السرعة</th>
-              <th>السعر الشهري</th>
-              <th>الاستخدام</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>باقة 300 ميجابت</td>
-              <td>300 ميجابت/ث</td>
-              <td><strong>287 ريال</strong></td>
-              <td>اشتراك مجاني في خدمة تلفزيون موبايلي</td>
-            </tr>
-            <tr>
-              <td>باقة 400 ميجابت</td>
-              <td>400 ميجابت/ث</td>
-              <td><strong>345 ريال</strong></td>
-              <td>تشمل 2 مقويات Mesh واي فاي اشتراك مجاني في خدمة تلفزيون موبايلي وخدمة شوفها بلس</td>
-            </tr>
-            <tr>
-              <td>باقة 500 ميجابت</td>
-              <td>500 ميجابت/ث</td>
-              <td><strong>322 ريال</strong></td>
-              <td>تشمل 3 مقويات Mesh واي فاي بناء على طلب العميل ولمرة واحدة فقط للتأسيس الجديد - تغطية داخلية + اشتراك مجاني في خدمة تلفزيون موبايلي، خدمة شوفها بلس وخدمة OSN Plus</td>
-            </tr>
- 
-          </tbody>
-        </table>
-
-        <div class="notice-box" data-animate="up">
-          ⚠️ <strong>تنبيه:</strong> للاشتراك أو الاستفسار، اتصل بـ مندوب موبايلي فايبر على . <strong>0581525591</strong>.
-        </div>
-
-        <div id="n1-s4" class="section-heading" data-animate="up">📋 خطوات الاشتراك في موبايلي فاير</div>
-
-        <ul class="steps-list">
-          <li data-animate="right"><span class="step-num">1</span><span class="step-text">التواصل على <strong>0581525591</strong>اتصل بالمندوب على 0581525591 وحدد احتياجاتك.</span></li>
-          <li data-animate="right" data-delay="100"><span class="step-num">2</span><span class="step-text">اختر الباقة بناءً على نصيحة المندوب.</span></li>
-          <li data-animate="right" data-delay="200"><span class="step-num">3</span><span class="step-text">حدد موعدًا للتركيب.</span></li>
-          <li data-animate="right" data-delay="300"><span class="step-num">4</span><span class="step-text">استقبل فريق التركيب لتفعيل الخدمة.</span></li>
-          <li data-animate="right" data-delay="400"><span class="step-num">5</span><span class="step-text">تابع مع المندوب للتأكد من رضَاك.</span></li>
-        </ul>
-        <p>لأي دعم إضافي، لا تتردد في الاتصال على <strong>0581525591</strong>.</p>
-        <div class="ornamental-divider" data-animate="fade">❋ ❋ ❋</div>
-
-        <div id="n1-s5" class="info-box rose from-left" data-animate="left">
-          <h4>💡 نصائح احترافية لتحسين أداء موبايلي فاير</h4>
-          <ul>
-            <li>حافظ على الكابلات بعيدًا عن الثني.</li>
-            <li>نظف الراوتر باستمرار.</li>
-            <li>أعد تشغيل الراوتر أحيانًا.</li>
-            <li>تواصل على <strong>0581525591</strong> عند الحاجة للدعم.</li>
-          </ul>
-        </div>
-        <p>بهذه الطرق، ستضمن إنترنتًا سريعًا ومستقرًا.</p>
-        <div id="n1-s6" class="section-heading" data-animate="up">⚖️ موبايلي فاير مقابل المنافسين</div>
-
-        <table class="price-table compare-table" data-animate="up">
-          <thead>
-            <tr>
-              <th>المزود</th>
-              <th>السرعة القصوى</th>
-              <th>السعر</th>
-              <th>الدعم</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>موبايلي فاير</td>
-              <td>1 جيجابايت</td>
-              <td>230-920 ريال</td>
-              <td><span class="compare-badge badge-green">دعم شخصي عبر المندوب</span></td>
-            </tr>
-            <tr>
-              <td>سلام فايبر</td>
-              <td>500 ميجابت/ث</td>
-              <td>250-700 ريال</td>
-              <td><span class="compare-badge badge-gold">دعم هاتفي فقط</span></td>
-            </tr>
-          </tbody>
-        </table>
-        <p>للمزيد من التفاصيل، اتصل على <strong>0581525591</strong>.</p>
-        <div id="n1-s7" class="info-box mint from-left" data-animate="left">
-          <h4>🔮 مستقبل الإنترنت مع موبايلي</h4>
-
-          <p>تسعى موبايلي لتوسيع شبكة الألياف البصرية ورفع السرعات مستقبلًا. للحصول على آخر التحديثات، تواصل مع مندوب موبايلي فايبر على <strong>0581525591</strong>.</p>
-        </div>
-
-        <div class="highlight-cta" data-animate="scale">
-          <p>للاشتراك والاستفسار والحصول على أفضل العروض الحصرية</p>
-          <div class="phone">📞 0581525591</div>
-          <p style="font-size:0.85rem;margin-top:8px;opacity:0.8">موبايلي فاير الرياض — اتصل الآن وابدأ رحلتك مع الإنترنت السريع</p>
-        </div>
-
-        <div class="share-bar">
-          <span>شارك المقال:</span>
-          <a class="share-btn wa" href="#">📱 واتساب</a>
-          <a class="share-btn tw" href="#">🐦 تويتر</a>
-          <a class="share-btn fb" href="#">📘 فيسبوك</a>
-        </div>
-
-        <a href="#" class="read-more">قراءة المزيد ←</a>
-      </div>
-    </article>
-
-    <!-- ===== ARTICLE 2: عبد المجيد بانافع للعود ===== -->
-    <article class="article-card" data-animate="up" id="art2">
-      <div class="card-header oud-header">
-        <div class="card-date">📅 فبراير 17, 2026</div>
-        <h2 class="card-title">عبد المجيد بانافع للعود — حيث تكتمل فصول الرائحة</h2>
-      </div>
-      <div class="card-body">
-
-        <!-- جدول المحتويات -->
-        <div class="toc-wrapper" style="border-right-color: #C46A25; background: linear-gradient(135deg,#FFF8F0,#FFF0E0);">
-          <button class="toc-toggle" aria-expanded="false" onclick="toggleTOC(this)" style="color:#5A2E08">
-            <div class="toc-toggle-left">
-              <span class="toc-icon" style="background:linear-gradient(135deg,#7A4015,#C46A25)">🪵</span>
-              <span>جدول المحتويات</span>
-              <span class="toc-badge" style="background:#7A4015">6 أقسام</span>
+        <!-- FOOTER -->
+        <footer>
+            <div class="footer-title">مدونة قبيلة الشبان بني مالك</div>
+            <p>منصة تهتم بتوثيق تاريخ وموروث القبيلة، وتُبرز إنجازاتهم وقيمهم
+                العريقة — أخبار، مناسبات، تراث، وأسلوب عصري ومميز.</p>
+            <div class="footer-links">
+                <a href="#">الرئيسية</a>
+                <a href="#">من نحن</a>
+                <a href="#">التراث</a>
+                <a href="#">الخدمات</a>
+                <a href="#">تواصل</a>
             </div>
-            <div style="display:flex;align-items:center;gap:8px">
-              <span style="font-family:'Tajawal',sans-serif;font-size:0.82rem;font-weight:500;color:#8B5A30">
-                <span class="toc-status">[إظهار]</span>
-                <span class="toc-hide-label">[إخفاء]</span>
-              </span>
-              <span class="toc-arrow" style="color:#7A4015;background:rgba(122,64,21,0.1)">▼</span>
-            </div>
-          </button>
-          <div class="toc-divider"></div>
-          <div class="toc-body">
-            <ol class="toc-list">
-              <li><a href="#a2-s1">من قطرة الزيت إلى بخور المجلس <span class="toc-arrow-link">←</span></a></li>
-              <li><a href="#a2-s2">أروقة الفخامة — كنوز بانافع <span class="toc-arrow-link">←</span></a></li>
-              <li><a href="#a2-s3">لماذا يُعدّ بانافع الخيار الأول؟ <span class="toc-arrow-link">←</span></a></li>
-              <li><a href="#a2-s4">أبرز منتجات متجر بانافع <span class="toc-arrow-link">←</span></a></li>
-              <li><a href="#a2-s5">آراء العملاء ومراجعاتهم <span class="toc-arrow-link">←</span></a></li>
-              <li><a href="#a2-s6">زيارة المتجر والتواصل <span class="toc-arrow-link">←</span></a></li>
-            </ol>
-          </div>
-        </div>
+            <p style="margin-top:20px;font-size:0.8rem;opacity:0.5">© 2026 مدونة
+                قبيلة الشبان بني مالك — جميع الحقوق محفوظة</p>
+        </footer>
 
-        <div class="article-breadcrumb">
-          <a href="#">الرئيسية</a> ← <a href="#">عطور وعود</a> ← عبد المجيد بانافع للعود
-        </div>
-
-        <p>في الذاكرة السعودية العميقة، يرتبط اسم <strong>"بانافع"</strong> برائحة الصباحات الهادئة والجمعات التي يملأها الوقار والكرم. لم تعد القصة مجرد رائحة عطر، بل أصبحت رحلة اكتشاف تبدأ من المصدر وتنتهي إلى علامة تجارية راسخة تتحدث عن نفسها في كل مجلس.</p>
-
-        <div id="a2-s1" class="info-box gold from-right" data-animate="right">
-          <h4>🌿 من قطرة الزيت إلى بخور المجلس</h4>
-          <p>رحلة بانافع لا تبدأ من الرف، بل من الغابة ذاتها. الخشب المختار بعناية من أجود مناطق الهند والكمبوديا، الزيوت المستخلصة بعمليات تقطير دقيقة، ثم التمزيج الذي يستلزم سنوات من الخبرة — كل هذا يجتمع ليخلق رائحة تحكي قصة ثقافة كاملة.</p>
-        </div>
-
-        <div id="a2-s2" class="section-heading oud-accent" data-animate="up">🛤️ أروقة الفخامة: كيف تتنقل بين كنوز بانافع؟</div>
-
-        <ul class="steps-list">
-          <li data-animate="right">
-            <span class="step-num" style="background: linear-gradient(135deg,#7A4015,#C46A25);">1</span>
-            <span class="step-text"><strong>ركن الأصالة — دهن العود والبخور:</strong> قسم البخور والعبارات يتجاوز المئة خيار، مع خلطات سرية تعكس برامج الكرم السعودي — محكمة للمجالس اليدوية والآلات الإلكترونية على حد سواء. تنقل بين روائح الدهن الكامبودي والهندي والبنغلاديشي وفق ذوقك.</span>
-          </li>
-          <li data-animate="right" data-delay="100">
-            <span class="step-num" style="background: linear-gradient(135deg,#7A4015,#C46A25);">2</span>
-            <span class="step-text"><strong>مختبر الإبداع — الزيوت الخام والمستلزمات:</strong> قسم العطور الخام يفتح أبواب الاحتراف للجميع؛ كل المواد والمقاييس متوفرة بدقة، مع موازين وأدوات تجعل غرفتك مختبراً عالمياً تصنع فيه تركيبتك المميزة.</span>
-          </li>
-          <li data-animate="right" data-delay="200">
-            <span class="step-num" style="background: linear-gradient(135deg,#7A4015,#C46A25);">3</span>
-            <span class="step-text"><strong>لمسات الحداثة — الزيوت الفرنسية والمسك:</strong> محاكاة لأشهر الروائح العالمية من دور كريستيان ديور وشانيل وهيرمس، مع الحفاظ على الهوية العربية الراسخة في المسك والعنبر الأبيض.</span>
-          </li>
-          <li data-animate="right" data-delay="300">
-            <span class="step-num" style="background: linear-gradient(135deg,#7A4015,#C46A25);">4</span>
-            <span class="step-text"><strong>منطقة التخصيص — الخلطات الشخصية:</strong> يتيح لك بانافع طلب تركيبة عطر خاصة باسمك أو مناسبتك، مما يجعل الهدية لا تُنسى وتحمل لمستك الشخصية.</span>
-          </li>
-        </ul>
-
-        <div id="a2-s3" class="info-box mint from-left" data-animate="left">
-          <h4>⭐ لماذا يُعدّ "عبد المجيد بانافع" الخيار الأول للمحترفين والمتذوقين؟</h4>
-          <p>السر في <em>"ثقافة المصدر"</em>: لا يبيعك مجهول المكونات، بل يضع بين يديك المواد الأولية لتركيب العطور بنفسك، مع مستوى من الشفافية نادر في السوق. هذا يجعل اسم "بانافع" مرادفاً للثقة لدى كبار صانعي العطور في المملكة العربية السعودية ودول الخليج.</p>
-        </div>
-
-        <div id="a2-s4" class="section-heading oud-accent" data-animate="up">🛍️ أبرز منتجات متجر بانافع</div>
-
-        <table class="price-table" data-animate="up" style="font-size:0.88rem">
-          <thead>
-            <tr>
-              <th>المنتج</th>
-              <th>الوصف</th>
-              <th>التميز</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td><strong>دهن العود الكمبودي</strong></td>
-              <td>خشب العود الأصيل بزيت بارد</td>
-              <td><span class="compare-badge badge-green">الأعلى مبيعاً</span></td>
-            </tr>
-            <tr>
-              <td><strong>بخور الملوك</strong></td>
-              <td>خلطة خاصة للمجالس الرسمية</td>
-              <td><span class="compare-badge badge-gold">حصري</span></td>
-            </tr>
-            <tr>
-              <td><strong>زيت المسك الأبيض</strong></td>
-              <td>خام نقي بدون كحول</td>
-              <td><span class="compare-badge badge-blue">طبيعي 100%</span></td>
-            </tr>
-            <tr>
-              <td><strong>عطر شرقي كلاسيك</strong></td>
-              <td>مزيج العنبر والورد والعود</td>
-              <td><span class="compare-badge badge-green">الأكثر تقييماً</span></td>
-            </tr>
-          </tbody>
-        </table>
-
-        <div id="a2-s5" class="section-heading oud-accent" data-animate="up">💬 آراء العملاء ومراجعاتهم</div>
-
-        <div class="testimonial" data-animate="up">
-          "كنت أبحث عن دهن عود أصيل بدون إضافات، وجدت ضالتي في بانافع. الرائحة تدوم لساعات طويلة وتجذب الثناء في كل مكان."
-          <span class="t-author">— أبو فيصل، الرياض ⭐⭐⭐⭐⭐</span>
-        </div>
-
-        <div class="testimonial" data-animate="up">
-          "اشتريت مجموعة من الزيوت الخام لأصنع عطري بنفسي، الفريق كان متعاوناً جداً وأرشدني للمزج الصحيح. النتيجة فاقت توقعاتي."
-          <span class="t-author">— أم سلمى، جدة ⭐⭐⭐⭐⭐</span>
-        </div>
-
-        <div class="testimonial" data-animate="up">
-          "بخور الملوك أصبح لازمة في كل مجلس نقيمه. الضيوف دائماً يسألون من أين؟ والجواب دائماً بانافع."
-          <span class="t-author">— محمد العمري، الدمام ⭐⭐⭐⭐⭐</span>
-        </div>
-
-        <div id="a2-s6" class="highlight-cta oud-cta" data-animate="scale">
-          <p>في عالم العطور، الرائحة هي الكلمة — اجعل كلماتك فواحة مع بانافع</p>
-          <p style="font-size:1rem;font-weight:700;color:var(--gold-light);margin-top:8px">🏪 متجر عبد المجيد بانافع للعود (BANAFA OUD)</p>
-          <p style="font-size:0.85rem;margin-top:6px;opacity:0.85">الرياض | جدة | الدمام — متاح عبر الإنترنت أيضاً</p>
-        </div>
-
-        <div class="share-bar">
-          <span>شارك المقال:</span>
-          <a class="share-btn wa" href="#">📱 واتساب</a>
-          <a class="share-btn tw" href="#">🐦 تويتر</a>
-          <a class="share-btn fb" href="#">📘 فيسبوك</a>
-        </div>
-
-        <a href="#" class="read-more" style="background: linear-gradient(135deg,#7A4015,#C46A25)">قراءة المزيد ←</a>
-      </div>
-    </article>
-
-    <!-- ===== ARTICLE 3: عاملات بالشهر الدمام ===== -->
-    <article class="article-card" data-animate="up" id="art3">
-      <div class="card-header blue-header">
-        <div class="card-date">📅 مارس 16, 2026</div>
-        <h2 class="card-title">عاملات بالشهر الدمام لتنظيم المنزل — دليلك الشامل</h2>
-      </div>
-      <div class="card-body">
-
-        <!-- جدول المحتويات -->
-        <div class="toc-wrapper blue-toc" style="border-right-color:#2A5F8F;background:linear-gradient(135deg,#F0F6FF,#E5EEFF)">
-          <button class="toc-toggle" aria-expanded="false" onclick="toggleTOC(this)" style="color:#1A3A5C">
-            <div class="toc-toggle-left">
-              <span class="toc-icon" style="background:linear-gradient(135deg,#1A3A5C,#2A5F8F)">🏠</span>
-              <span>جدول المحتويات</span>
-              <span class="toc-badge" style="background:#1A3A5C">7 أقسام</span>
-            </div>
-            <div style="display:flex;align-items:center;gap:8px">
-              <span style="font-family:'Tajawal',sans-serif;font-size:0.82rem;font-weight:500;color:#2A4F7A">
-                <span class="toc-status">[إظهار]</span>
-                <span class="toc-hide-label">[إخفاء]</span>
-              </span>
-              <span class="toc-arrow" style="color:#1A3A5C;background:rgba(26,58,92,0.1)">▼</span>
-            </div>
-          </button>
-          <div class="toc-divider" style="background:linear-gradient(90deg,#2A5F8F,transparent)"></div>
-          <div class="toc-body">
-            <ol class="toc-list">
-              <li><a href="#a3-s1">تنبيه مهم قبل التعاقد <span class="toc-arrow-link">←</span></a></li>
-              <li><a href="#a3-s2">العمالة المنزلية في المدينة المنورة <span class="toc-arrow-link">←</span></a></li>
-              <li><a href="#a3-s3">عاملات بالشهر الرياض <span class="toc-arrow-link">←</span></a></li>
-              <li><a href="#a3-s4">عاملات بالشهر الدمام <span class="toc-arrow-link">←</span></a></li>
-              <li><a href="#a3-s5">نصائح مهمة قبل التعاقد <span class="toc-arrow-link">←</span></a></li>
-              <li><a href="#a3-s6">أهمية الاحترام المتبادل <span class="toc-arrow-link">←</span></a></li>
-              <li><a href="#a3-s7">الأسئلة الشائعة <span class="toc-arrow-link">←</span></a></li>
-            </ol>
-          </div>
-        </div>
-
-        <div class="article-breadcrumb">
-          <a href="#">الرئيسية</a> ← <a href="#">عمالة منزلية</a> ← عاملات بالشهر الدمام
-        </div>
-
-        <p>يزداد الاهتمام بخدمات العمالة المنزلية في مختلف مناطق المملكة العربية السعودية، لا سيما في مدينة الدمام المتنامية، وذلك بسبب أسلوب الحياة العصري المتطور وارتفاع وتيرة العمل اليومي. إليك الدليل الشامل لكل ما تحتاج معرفته قبل اتخاذ قرارك.</p>
-
-        <div id="a3-s1" class="info-box rose from-right" data-animate="right">
-          <h4>⚠️ تنبيه مهم قبل أي خطوة</h4>
-          <p>لا تُعطِ أي عربون للعاملة أو المكتب قبل التأكد من الوثائق والأوراق الرسمية كاملة. التحقق المسبق يحميك من النصب والاحتيال. تأكد دائماً من أن المكتب مرخص رسمياً من وزارة الموارد البشرية وأن الوثائق تشمل: عقد موثق، تأمين صحي، وضمان الاستبدال خلال المدة المحددة.</p>
-        </div>
-
-        <div id="a3-s2" class="section-heading blue-accent" data-animate="up">🏙️ العمالة المنزلية الشهرية في المدينة المنورة</div>
-        <p style="color:var(--text-body);line-height:2;font-size:0.95rem;margin-bottom:16px">في المدينة المنورة، الطلب على الخادمات الماهرات في ارتفاع ملحوظ مع بحث العائلات عن خبرات محددة تناسب نمط حياتها الديني والاجتماعي. تشمل الخدمات المطلوبة: الطهي وفق المتطلبات الغذائية الخاصة، العناية بكبار السن، وتنظيم المنزل الكامل مع الحرص على الخصوصية.</p>
-
-        <div class="info-box blue from-left" data-animate="left">
-          <h4>📊 إحصائيات الطلب في المدينة المنورة</h4>
-          <ul>
-            <li>ارتفاع الطلب بنسبة 40% منذ عام 2023 وفق تقارير وزارة الموارد البشرية.</li>
-            <li>أكثر الجنسيات طلباً: إثيوبية، فلبينية، إندونيسية.</li>
-            <li>متوسط الراتب الشهري: بين 1,000 و2,500 ريال حسب المهام والخبرة.</li>
-          </ul>
-        </div>
-
-        <div id="a3-s3" class="section-heading blue-accent" data-animate="up">🏙️ عاملات بالشهر الرياض</div>
-        <div class="info-box blue from-left" data-animate="left">
-          <h4>📍 سوق العمالة في الرياض</h4>
-          <p>في الرياض، تشهد خدمات الضيافة والعمالة اليومية ازدهاراً متواصلاً بسبب نمط المعيشة المريح وتعدد احتياجات الأسر الكبيرة. تتضمن المهام عادةً: تنظيف المنزل، طهي الوجبات، العناية بالأطفال وكبار السن. يُنصح دائماً بالتأكد من صحة الوثائق والتدريب المسبق والتواصل المباشر مع المكتب المعتمد من الجهات الحكومية.</p>
-        </div>
-
-        <div id="a3-s4" class="section-heading blue-accent" data-animate="up">🏙️ عاملات بالشهر الدمام — تفاصيل شاملة</div>
-
-        <ul class="steps-list">
-          <li data-animate="right">
-            <span class="step-num blue-step">1</span>
-            <span class="step-text"><strong>الطلب المتزايد بعد الجائحة:</strong> الدمام يشهد طلباً متصاعداً، إذ أصبح الدعم المنزلي ضرورة عملية للأسر ذات الوالدين العاملين، وليس مجرد رفاهية.</span>
-          </li>
-          <li data-animate="right" data-delay="100">
-            <span class="step-num blue-step">2</span>
-            <span class="step-text"><strong>التخصص في المهام:</strong> يمكنك طلب عاملة متخصصة في: الطهي فقط، العناية بكبار السن، رعاية الأطفال، التنظيف الشامل، أو الجمع بين أكثر من مهمة.</span>
-          </li>
-          <li data-animate="right" data-delay="200">
-            <span class="step-num blue-step">3</span>
-            <span class="step-text"><strong>المكاتب المعتمدة في الدمام:</strong> تواصل مع المكاتب المرخصة رسمياً لضمان توفير عاملة مدربة مع ضمان الاستبدال في حال عدم الملاءمة.</span>
-          </li>
-          <li data-animate="right" data-delay="300">
-            <span class="step-num blue-step">4</span>
-            <span class="step-text"><strong>المتطلبات القانونية:</strong> العقد الموثق، التأمين الصحي، وثائق الإقامة النظامية، والالتزام بمعايير وزارة الموارد البشرية — كلها شروط لا تنازل عنها.</span>
-          </li>
-        </ul>
-
-        <div id="a3-s5" class="section-heading blue-accent" data-animate="up">📋 نصائح مهمة قبل التعاقد</div>
-
-        <div class="info-box gold from-right" data-animate="right">
-          <h4>✅ قائمة التحقق الأساسية</h4>
-          <ul>
-            <li>تحقق من ترخيص المكتب عبر منصة مساند الحكومية مباشرة.</li>
-            <li>اسأل عن أوراق العقد، التأمين، المدة، وشروط الاستبدال قبل أي دفع.</li>
-            <li>استشر الأقارب والمعارف لاختيار مكتب ذي سمعة حسنة موثقة.</li>
-            <li>لا تُقدم أي مبالغ قبل استلام جميع الأوراق الرسمية والتوقيع على العقد.</li>
-            <li>حدد المهام والساعات والإجازات بدقة في العقد لتجنب أي خلاف لاحق.</li>
-          </ul>
-        </div>
-
-        <div id="a3-s6" class="section-heading blue-accent" data-animate="up">🤝 أهمية الاحترام المتبادل</div>
-        <p style="color:var(--text-body);line-height:2;font-size:0.95rem;margin-bottom:16px">ثقافة الاحترام المتبادل هي الأساس لعلاقة عمل ناجحة ومستدامة. حين تُقدِّر جهد العاملة وتحترم حقوقها، تحصل على أداء أفضل والتزام أعلى. وفي المقابل، وضوح التوقعات من البداية يحمي الطرفين من أي سوء فهم.</p>
-
-        <div class="info-box amber from-left" data-animate="left">
-          <h4>🌟 نموذج بيئة عمل صحية</h4>
-          <ul>
-            <li>التواصل الواضح والصادق حول المهام المطلوبة يومياً.</li>
-            <li>توفير بيئة سكن لائقة ومريحة وفق اشتراطات وزارة الموارد البشرية.</li>
-            <li>الالتزام بدفع الراتب في موعده دون تأخير أو حسومات تعسفية.</li>
-            <li>منح إجازة أسبوعية كاملة وفق العقد.</li>
-          </ul>
-        </div>
-
-        <div id="a3-s7" class="section-heading blue-accent" data-animate="up">❓ الأسئلة الشائعة</div>
-
-        <div class="faq-item" data-animate="up">
-          <button class="faq-question" onclick="toggleFAQ(this)">
-            ما أهمية العمالة المنزلية الشهرية؟
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            العمالة المنزلية الشهرية توفر راحة بالاً وإدارة منزلية منتظمة، مما يتيح للأسرة التفرغ للعمل والأنشطة الحياتية دون قلق بشأن المهام اليومية. كما تضمن نظافة دائمة ومستوى معيشياً أعلى.
-          </div>
-        </div>
-
-        <div class="faq-item" data-animate="up">
-          <button class="faq-question" onclick="toggleFAQ(this)">
-            كيف أتأكد من العاملة المناسبة؟
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            تحدد احتياجاتك بدقة أولاً (طهي، تنظيف، رعاية أطفال، إلخ)، ثم تطلب من المكتب ترشيح مرشحات متوافقة مع تلك الاحتياجات. احرص على إجراء مقابلة قصيرة عبر الهاتف أو حضورياً قبل التعاقد النهائي.
-          </div>
-        </div>
-
-        <div class="faq-item" data-animate="up">
-          <button class="faq-question" onclick="toggleFAQ(this)">
-            ما الإجراء إذا لم تكن العاملة مناسبة؟
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            تتيح معظم المكاتب المرخصة فترة ضمان تتراوح بين أسبوع وشهر لاستبدال العاملة إذا ثبت عدم الملاءمة. تأكد من تضمين هذا الشرط صراحةً في العقد المكتوب قبل التوقيع.
-          </div>
-        </div>
-
-        <div class="faq-item" data-animate="up">
-          <button class="faq-question" onclick="toggleFAQ(this)">
-            ما متوسط الراتب الشهري للعاملة في الدمام؟
-            <span class="faq-icon">+</span>
-          </button>
-          <div class="faq-answer">
-            يتراوح الراتب الشهري عادةً بين 1,200 و2,800 ريال سعودي حسب الجنسية، المهام المطلوبة، وخبرة العاملة. تشمل التكلفة الإجمالية عادةً: الراتب + التأمين الصحي + تكلفة الإقامة إن كانت مقيمة.
-          </div>
-        </div>
-
-        <div class="highlight-cta blue-cta" data-animate="scale">
-          <p>احترام التفاهم المتبادل يُسهم في القيام بالأعمال اليومية بشكل متميز، ويبني علاقة ثقة مطولة ذات قيمة حقيقية للجميع.</p>
-          <p style="font-size:0.9rem;margin-top:10px;opacity:0.9">🏠 ابحث دائماً عن المكاتب المرخصة عبر منصة مساند الرسمية — حقوقك محفوظة بالقانون</p>
-        </div>
-
-        <div class="share-bar">
-          <span>شارك المقال:</span>
-          <a class="share-btn wa" href="#">📱 واتساب</a>
-          <a class="share-btn tw" href="#">🐦 تويتر</a>
-          <a class="share-btn fb" href="#">📘 فيسبوك</a>
-        </div>
-
-        <a href="#" class="read-more blue-read-more">قراءة المزيد ←</a>
-      </div>
-    </article>
-
-  </main>
-
-  <!-- SIDEBAR -->
-  <aside class="sidebar">
-
-    <div class="sidebar-widget" data-animate="left">
-      <div class="widget-title">🔥 المشاركات الشائعة</div>
-      <a href="#art1" class="related-item">
-        <div class="related-dot"></div>
-        <span>خدمة شوفها بلس — أفضل باقات الإنترنت السريع</span>
-      </a>
-      <a href="#art2" class="related-item">
-        <div class="related-dot"></div>
-        <span>عبد المجيد بانافع للعود — حيث تكتمل فصول الرائحة</span>
-      </a>
-      <a href="#art3" class="related-item">
-        <div class="related-dot"></div>
-        <span>عاملات بالشهر في الدمام لتنظيم المنزل</span>
-      </a>
-      <a href="#" class="related-item">
-        <div class="related-dot"></div>
-        <span>ميكروتيك مزود خدمة الإنترنت العربي الأول في تركيا</span>
-      </a>
-      <a href="#" class="related-item">
-        <div class="related-dot"></div>
-        <span>قصائد من تراث الشبان بني مالك</span>
-      </a>
-    </div>
-
-    <div class="sidebar-widget" data-animate="left">
-      <div class="widget-title">📰 آخر المقالات</div>
-      <a href="#" class="related-item">
-        <div class="related-dot"></div>
-        <span>الصحة الطبيعية من منظور ابن سينا والطب الحديث</span>
-      </a>
-      <a href="#" class="related-item">
-        <div class="related-dot"></div>
-        <span>رحلة إلى تاريخ قبيلة الشبان بين الجبال والسهول</span>
-      </a>
-      <a href="#" class="related-item">
-        <div class="related-dot"></div>
-        <span>أفضل وصفات الخبز التقليدي على الطريقة القبلية</span>
-      </a>
-      <a href="#" class="related-item">
-        <div class="related-dot"></div>
-        <span>مستقبل الاتصالات في المملكة — رؤية 2030</span>
-      </a>
-    </div>
-
-    <div class="sidebar-widget" data-animate="left">
-      <div class="widget-title">🏷️ الوسوم</div>
-      <div class="tag-cloud">
-        <a class="tag" href="#">تراث</a>
-        <a class="tag" href="#">إنترنت</a>
-        <a class="tag" href="#">عطور</a>
-        <a class="tag" href="#">عمالة</a>
-        <a class="tag" href="#">خدمات</a>
-        <a class="tag" href="#">قبيلة</a>
-        <a class="tag" href="#">الرياض</a>
-        <a class="tag" href="#">الدمام</a>
-        <a class="tag" href="#">موبايلي</a>
-        <a class="tag" href="#">بانافع</a>
-        <a class="tag" href="#">عود</a>
-        <a class="tag" href="#">تقنية</a>
-        <a class="tag" href="#">مساند</a>
-        <a class="tag" href="#">ألياف</a>
-      </div>
-    </div>
-
-    <div class="sidebar-widget" data-animate="left" style="background: linear-gradient(135deg,#FFF9EC,#FFF4D6); border:1px solid rgba(201,168,76,0.3)">
-      <div class="widget-title" style="color: #7A5000; border-bottom-color: var(--gold)">📞 تواصل معنا</div>
-      <p style="font-size:0.9rem;color:#4A3A00;line-height:1.8">للاستفسارات والتعاون والإعلانات، تواصل معنا عبر الأرقام المذكورة في المقالات أو عبر قنوات التواصل الاجتماعي.</p>
-      <div style="text-align:center;margin-top:16px">
-        <a href="#" style="display:inline-block;background:var(--crimson);color:white;padding:10px 24px;border-radius:30px;text-decoration:none;font-size:0.9rem;font-weight:600">تواصل الآن</a>
-      </div>
-    </div>
-
-    <!-- INTERNET CTA -->
-    <div class="sidebar-widget" data-animate="left" style="background:linear-gradient(135deg,#0d6e5a,#1aad8a);border:none;">
-      <p style="color:white;font-size:0.92rem;font-weight:700;margin-bottom:8px">📡 شوفها بلس</p>
-      <p style="color:rgba(255,255,255,0.85);font-size:0.85rem;line-height:1.8;margin-bottom:12px">اشترك اليوم في أسرع إنترنت بالألياف الضوئية</p>
-      <a href="#" style="display:block;text-align:center;background:white;color:#0d6e5a;padding:9px;border-radius:25px;text-decoration:none;font-size:0.9rem;font-weight:700">📞 0581525591</a>
-    </div>
-
-    <!-- OUD CTA -->
-    <div class="sidebar-widget" data-animate="left" style="background:linear-gradient(135deg,#4A2508,#7A4015);border:none;">
-      <p style="color:var(--gold-light);font-size:0.92rem;font-weight:700;margin-bottom:8px">🪵 بانافع للعود</p>
-      <p style="color:rgba(255,255,255,0.85);font-size:0.85rem;line-height:1.8;margin-bottom:12px">اكتشف أجود أنواع دهن العود والبخور الأصيل</p>
-      <a href="#" style="display:block;text-align:center;background:var(--gold);color:#4A2508;padding:9px;border-radius:25px;text-decoration:none;font-size:0.9rem;font-weight:700">🏪 زيارة المتجر</a>
-    </div>
-
-  </aside>
-</div>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-title">مدونة قبيلة الشبان بني مالك</div>
-  <p>منصة تهتم بتوثيق تاريخ وموروث القبيلة، وتُبرز إنجازاتهم وقيمهم العريقة — أخبار، مناسبات، تراث، وأسلوب عصري ومميز.</p>
-  <div class="footer-links">
-    <a href="#">الرئيسية</a>
-    <a href="#">من نحن</a>
-    <a href="#">التراث</a>
-    <a href="#">الخدمات</a>
-    <a href="#">تواصل</a>
-  </div>
-  <p style="margin-top:20px;font-size:0.8rem;opacity:0.5">© 2026 مدونة قبيلة الشبان بني مالك — جميع الحقوق محفوظة</p>
-</footer>
-
-<script>
+        <script>
   // SCROLL PROGRESS
   const progress = document.getElementById('scrollProgress');
   const backTop = document.getElementById('backTop');
@@ -1624,5 +1857,51 @@
     document.querySelectorAll(sel).forEach(el => observer.observe(el));
   });
 </script>
-</body>
+<script>
+
+(function() {
+    'use strict';
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'F12' || e.keyCode === 123) {
+            e.preventDefault();
+            return false;
+        }
+
+        if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) {
+            e.preventDefault();
+            return false;
+        }
+
+   if (e.ctrlKey && (e.key === 'u' || e.keyCode === 85)) {
+        e.preventDefault();
+        return false;
+    }
+    });
+
+    const devToolsCheck = function() {
+        if (window.console && window.console.time) {
+                (function() {
+                    (function() {
+                        debugger;
+                    }).apply(this, ['alwaysOn']);
+                })();
+         
+        }
+    };
+    
+
+    setInterval(devToolsCheck, 1000);
+
+
+    document.addEventListener('copy', function(e) {
+        e.preventDefault();
+    });
+
+})();
+</script>
+    </body>
 </html>
