@@ -8,21 +8,25 @@
             href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;900&family=Amiri:wght@400;700&display=swap"
             rel="stylesheet">
         <style>
-  :root {
-    --crimson: #8B1A2B;
-    --crimson-dark: #5C0F1B;
-    --crimson-light: #C4354A;
-    --gold: #C9A84C;
-    --gold-light: #E8CC7A;
-    --cream: #F7F3EC;
-    --dark: #2C1810;
-    --text-main: #3D2B1F;
-    --text-body: #4E3B30;
-    --text-light: #6B5244;
-    --muted: #7A5C62;
-    --card-bg: #FFFCF8;
-    --section-bg: #FDF9F4;
-  }
+:root {
+    /* الألوان الأساسية: أحمر نبيذي غامق وذهبي مطفي */
+    --crimson: #681826;       /* أحمر غامق فخم بدلاً من الفاقع */
+    --crimson-dark: #4a0e19;
+    --crimson-light: #882d3c;
+    
+    --gold: #c5a059;          /* ذهبي هادئ */
+    --gold-light: #ebdcb2;
+    
+    /* الخلفيات والنصوص */
+    --cream: #fcfbf9;         /* أبيض مائل للكريمي الفاتح جداً لراحة العين */
+    --card-bg: #ffffff;       /* كروت بيضاء تماماً */
+    --section-bg: #f7f7f7;
+    
+    --dark: #1a1a1a;
+    --text-main: #333333;     /* رمادي غامق بدلاً من الأسود الصريح */
+    --text-body: #555555;
+    --text-light: #777777;
+}
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
@@ -944,6 +948,277 @@
     color: #2e7d32; /* أخضر غامق للسعر */
     font-size: 1.1rem;
   }
+  .custom-alert {
+  background-color: #fff5f2;  /* لون الخلفية الفاتح جداً */
+  border: 1px solid #ffd6c2;  /* لون الإطار (Border) */
+  border-radius: 8px;         /* تدوير الحواف */
+  padding: 15px 20px;         /* مسافة داخلية للكلام */
+  color: #2c3e50;             /* لون النص الأساسي (كحلي غامق) */
+  font-family: 'Cairo', sans-serif; /* أو أي خط عربي بتستخدمه */
+  line-height: 1.8;           /* ارتفاع السطر عشان الكلام مايبقاش لازق في بعضه */
+  text-align: right;          /* محاذاة لليمين */
+  direction: rtl;             /* اتجاه النص عربي */
+  font-size: 16px;            /* حجم الخط */
+}
+
+/* ستايل الكلمات المميزة */
+.custom-alert .highlight {
+  color: #bf4e19;             /* لون النص البرتقالي الغامق */
+  font-weight: 700;           /* يخلي الخط عريض (Bold) */
+}
+/* تنسيقات عامة للبوكس */
+.alert-box {
+  border-radius: 8px;
+  padding: 15px 20px;
+  color: #2c3e50;
+  font-family: 'Cairo', sans-serif; /* أو خطك المفضل */
+  line-height: 1.8;
+  text-align: right;
+  direction: rtl;
+  font-size: 16px;
+  margin-bottom: 20px; /* مسافة بين كل بوكس والتاني */
+}
+
+/* 1. الستايل الأخضر (للصورة الأولى) */
+.alert-green {
+  background-color: #f0fdf4;
+  border: 1px solid #bbf7d0;
+}
+.alert-green .highlight {
+  color: #15803d; /* أخضر غامق */
+  font-weight: 700;
+}
+
+/* 2. الستايل البنفسجي (للصورة الثانية) */
+.alert-purple {
+  background-color: #faf5ff;
+  border: 1px solid #e9d5ff;
+}
+.alert-purple .highlight {
+  color: #7e22ce; /* بنفسجي غامق */
+  font-weight: 700;
+}
+
+/* 3. الستايل السماوي/التركواز (للصورة الثالثة) */
+.alert-teal {
+  background-color: #f0fdfa;
+  border: 1px solid #ccfbf1;
+}
+.alert-teal .highlight {
+  color: #0f766e; /* تركواز غامق */
+  font-weight: 700;
+}
+</style>
+<style>
+    :root {
+        /* لوحة ألوان ملكية هادية وموحدة */
+        --brand-primary: #8B1A2B;       /* اللون الأساسي (أحمر قاني) */
+        --brand-secondary: #C9A84C;     /* اللون الثانوي (ذهبي) */
+        
+        --bg-body: #F9F9F9;             /* خلفية الصفحة (رمادي فاتح جداً) */
+        --bg-card: #FFFFFF;             /* خلفية الكروت (أبيض ناصع) */
+        
+        --text-dark: #2D2D2D;           /* للنصوص العناوين */
+        --text-gray: #555555;           /* للنصوص العادية */
+        
+        --accent-oud: #8D5524;          /* لون العود (للمسات فقط) */
+        --accent-blue: #1A3A5C;         /* لون العمالة (للمسات فقط) */
+        --accent-green: #0F766E;        /* لون النت (للمسات فقط) */
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+        font-family: 'Tajawal', sans-serif;
+        background: var(--bg-body);
+        color: var(--text-dark);
+        direction: rtl;
+        overflow-x: hidden;
+    }
+
+    li { list-style: none; }
+    a { text-decoration: none; transition: 0.3s; }
+
+    /* === HEADER (موحد للكل) === */
+    header {
+        background: #fff; /* الهيدر أبيض */
+        border-bottom: 3px solid var(--brand-primary); /* خط ملون تحت الهيدر */
+        position: relative;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+
+    .header-top {
+        display: flex; justify-content: space-between; padding: 10px 40px;
+        background: var(--brand-primary); color: #fff; font-size: 13px;
+    }
+    .header-top a { color: #fff; opacity: 0.8; }
+
+    .header-main { text-align: center; padding: 40px 20px; }
+
+    .blog-title {
+        font-family: 'Amiri', serif; font-size: 2.5rem; color: var(--brand-primary);
+        margin-bottom: 10px;
+    }
+    .blog-subtitle { color: var(--text-gray); font-size: 1rem; max-width: 600px; margin: 0 auto; }
+
+    nav { display: flex; justify-content: center; gap: 15px; padding-bottom: 30px; flex-wrap: wrap; }
+    nav a {
+        color: var(--text-dark); font-weight: 600; padding: 8px 20px; border-radius: 20px;
+        background: #f0f0f0; font-size: 0.9rem;
+    }
+    nav a:hover { background: var(--brand-primary); color: #fff; }
+
+
+    /* === MAIN LAYOUT === */
+    .main-grid {
+        display: grid; grid-template-columns: 1fr 320px; gap: 40px;
+        max-width: 1200px; margin: 40px auto; padding: 0 20px;
+    }
+
+
+    /* === ARTICLE CARDS (التغيير الكبير هنا) === */
+    .article-card {
+        background: var(--bg-card);
+        border-radius: 12px;
+        overflow: hidden;
+        margin-bottom: 40px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.04);
+        border: 1px solid #eee;
+        transition: transform 0.3s ease;
+    }
+    .article-card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.08); }
+
+    /* توحيد رأس الكارت ليكون أبيض للجميع */
+    .card-header {
+        background: #fff !important; 
+        padding: 25px 30px;
+        border-bottom: 1px solid #f0f0f0;
+        position: relative;
+    }
+    
+    /* الشريط الملون الجانبي لتمييز القسم */
+    .card-header::after {
+        content: ''; position: absolute; right: 0; top: 20px; bottom: 20px;
+        width: 4px; border-radius: 4px 0 0 4px;
+        background: var(--brand-primary); /* الافتراضي */
+    }
+
+    /* تخصيص ألوان الشريط الجانبي والعناوين حسب القسم */
+    /* قسم العود */
+    .article-card:has(.oud-header) .card-header::after { background: var(--accent-oud); }
+    .article-card:has(.oud-header) .card-title { color: var(--accent-oud); }
+    
+    /* قسم العمالة */
+    .article-card:has(.blue-header) .card-header::after { background: var(--accent-blue); }
+    .article-card:has(.blue-header) .card-title { color: var(--accent-blue); }
+
+    /* قسم النت */
+    #art1 .card-header::after { background: var(--accent-green); }
+    #art1 .card-title { color: var(--accent-green); }
+
+
+    .card-date { font-size: 0.8rem; color: #aaa; margin-bottom: 8px; display: block; }
+    
+    .card-title {
+        font-family: 'Amiri', serif; font-size: 1.8rem; font-weight: 700;
+        line-height: 1.4; color: var(--text-dark); /* اللون الافتراضي */
+    }
+
+    .card-body { padding: 30px; }
+    .card-body p { line-height: 1.9; color: var(--text-gray); margin-bottom: 20px; font-size: 1rem; }
+
+
+    /* === ELEMENTS (TOC, Tables, Boxes) === */
+    
+    /* توحيد شكل جدول المحتويات */
+    .toc-wrapper {
+        background: #fcfcfc !important;
+        border: 1px solid #eee !important;
+        border-right: 4px solid var(--brand-secondary) !important; /* ثابت للكل */
+        border-radius: 8px;
+        margin-bottom: 30px;
+    }
+    .toc-toggle { color: var(--text-dark) !important; padding: 15px 20px; width: 100%; display: flex; justify-content: space-between; cursor: pointer; border: none; background: none; font-family: inherit; font-weight: bold; font-size: 1.1rem; }
+    .toc-body { max-height: 0; overflow: hidden; transition: 0.4s; padding: 0 20px; }
+    .toc-body.open { max-height: 1000px; padding-bottom: 20px; }
+
+    /* توحيد العناوين الفرعية */
+    .section-heading {
+        font-family: 'Amiri', serif; font-size: 1.4rem; color: var(--text-dark);
+        border-bottom: 2px solid #eee; padding-bottom: 10px; margin: 30px 0 20px;
+        position: relative;
+    }
+    .section-heading::after {
+        content: ''; position: absolute; bottom: -2px; right: 0; width: 60px; height: 2px;
+        background: var(--brand-secondary);
+    }
+
+
+    /* توحيد الصناديق الملونة (هادية جداً) */
+    .info-box {
+        padding: 20px; border-radius: 8px; margin: 20px 0;
+        background: #fff; border: 1px solid #eee;
+        border-right-width: 4px;
+    }
+    .info-box h4 { margin-bottom: 10px; color: var(--text-dark); }
+    
+    /* ألوان الصناديق الهادية */
+    .info-box.gold { border-right-color: var(--brand-secondary); background: #fffdf5; }
+    .info-box.rose { border-right-color: var(--brand-primary); background: #fff5f7; }
+    .info-box.blue { border-right-color: var(--accent-blue); background: #f0f7ff; }
+    .info-box.mint { border-right-color: var(--accent-green); background: #f0fdfa; }
+
+
+    /* توحيد الجداول */
+    table { width: 100%; border-collapse: collapse; margin: 25px 0; background: #fff; border: 1px solid #eee; }
+    th { background: #f9f9f9 !important; color: var(--text-dark) !important; padding: 15px; font-weight: bold; border-bottom: 2px solid #eee; }
+    td { padding: 15px; border-bottom: 1px solid #eee; color: var(--text-gray); }
+    tr:nth-child(even) { background: #fcfcfc; }
+
+
+    /* توحيد زر القراءة والمشاركة */
+    .read-more {
+        display: inline-block; padding: 10px 30px; border-radius: 50px;
+        background: var(--brand-primary) !important; /* لون موحد للكل */
+        color: #fff; font-weight: bold; margin-top: 20px;
+        box-shadow: 0 4px 15px rgba(139, 26, 43, 0.2);
+    }
+    .read-more:hover { opacity: 0.9; transform: translateY(-2px); }
+
+    .share-bar { display: flex; gap: 10px; margin: 30px 0; padding: 20px 0; border-top: 1px dashed #eee; border-bottom: 1px dashed #eee; }
+    .share-btn { padding: 8px 15px; border-radius: 5px; color: #fff; font-size: 0.8rem; display: flex; align-items: center; gap: 5px; }
+    .wa { background: #25D366; } .tw { background: #1DA1F2; } .fb { background: #1877F2; }
+
+
+    /* === SIDEBAR (موحد) === */
+    .sidebar-widget { background: #fff; padding: 25px; border-radius: 12px; margin-bottom: 30px; border: 1px solid #eee; }
+    .widget-title { font-family: 'Amiri', serif; font-size: 1.2rem; margin-bottom: 20px; border-bottom: 2px solid #eee; padding-bottom: 10px; }
+    .related-item { display: flex; gap: 10px; padding: 10px 0; border-bottom: 1px solid #f9f9f9; color: var(--text-gray); }
+    .related-item:hover { color: var(--brand-primary); }
+    .tag-cloud { display: flex; flex-wrap: wrap; gap: 8px; }
+    .tag { padding: 5px 12px; background: #f5f5f5; color: var(--text-gray); border-radius: 15px; font-size: 0.85rem; }
+    .tag:hover { background: var(--brand-primary); color: #fff; }
+
+
+    /* === FOOTER === */
+    footer { background: #222; color: #aaa; padding: 50px 20px; text-align: center; margin-top: 50px; }
+    .footer-title { color: #fff; font-family: 'Amiri', serif; font-size: 1.8rem; margin-bottom: 15px; }
+    .footer-links { margin-top: 20px; display: flex; justify-content: center; gap: 20px; }
+    .footer-links a { color: #ccc; } .footer-links a:hover { color: #fff; }
+
+    /* CTA Highlights */
+    .highlight-cta {
+        background: #fdfdfd; border: 2px solid var(--brand-secondary); border-radius: 10px; padding: 30px; text-align: center; margin: 30px 0;
+    }
+    .highlight-cta .phone { color: var(--brand-primary); font-size: 1.6rem; font-weight: bold; margin: 10px 0; }
+    .oud-cta, .blue-cta { background: #fdfdfd !important; } /* إلغاء الخلفيات الملونة */
+
+
+    /* Responsive */
+    @media (max-width: 768px) {
+        .main-grid { grid-template-columns: 1fr; }
+        .blog-title { font-size: 1.8rem; }
+    }
 </style>
     </head>
     <body>
@@ -1366,64 +1641,79 @@
                             متذوقاً يبحث عن رائحة تليق به، أو طموحاً يسعى لبناء
                             علامته التجارية الخاصة.</p>
 
-                        <div id="a2-s2" class="section-heading oud-accent"
-                            data-animate="up">🛤️ أروقة الفخامة: كيف تتنقل بين
-                            كنوز بانافع؟</div>
+                        <div class="info-box gold from-right visible"
+                            data-animate="right">
+                            <h4
+                                style="color: #7A4015; font-weight: 900; font-size: 18px;">
+                                🛤️ أروقة الفخامة: كيف تتنقل بين
+                                كنوز بانافع؟</h4>
+                        </div>
+                        <p>عندما تتجول في الصفحة الرئيسية لمتجر عبد المجيد
+                            للعود، ستدرك أنك أمام تنظيم ذكي يختصر عليك عناء
+                            البحث، حيث تم تقسيم عالم الطيب إلى قطاعات متخصصة
+                            تلبي شغفك بدقة متناهية.</p>
+                        <div class="info-box rose from-right visible"
+                            data-animate="right">
+                            <h4
+                                style="color: #7A4015; font-weight: 900; font-size: 18px;">
+                                1. ركن الأصالة: دهن العود والبخور</h4>
+                        </div>
+                        <p class="custom-alert">
+                            هذا هو القسم الذي يُبنى عليه الإرث. هنا تجد <span
+                                class="highlight">أفخم أنواع دهن العود</span>
+                            التي تُستخلص لتبقى رفيقة ثيابك لأيام. أما في <span
+                                class="highlight">قسم البخور والعود</span>،
+                            فالخيارات تتجاوز مجرد خشب يحترق؛ إنها "خلطات سرية"
+                            تعبق بروح الكرم السعودي، مختارة بعناية لتناسب
+                            المباخر اليدوية والإلكترونية في أرقى المجالس.
+                        </p>
+                        <div class="info-box gold from-right visible"
+                            data-animate="right">
+                            <h4
+                                style="color: #7A4015; font-weight: 900; font-size: 18px;">
+                                2. مختبر الإبداع: الزيوت الخام والمستلزمات</h4>
+                        </div>
+                        <p class="alert-box alert-green">
+                            هذا هو التميز الحقيقي الذي ينفرد به المتجر. إذا كنت
+                            تملك حساً ابتكارياً، فإن <span class="highlight">قسم
+                                الزيوت العطرية الخام</span> يفتح لك أبواب
+                            الاحتراف. هنا تقتني المادة الخام بنقائها الكامل،
+                            ولتكتمل رحلتك، وفرنا لك في <span
+                                class="highlight">أدوات ومستلزمات تركيب
+                                العطور</span> كل ما يحتاجه المصمم؛ من مخابير
+                            قياس وموازين دقيقة وزجاجات فارغة، لتتحول غرفتك إلى
+                            مختبر عطور عالمي.
+                        </p>
 
-                        <ul class="steps-list">
-                            <li data-animate="right">
-                                <span class="step-num"
-                                    style="background: linear-gradient(135deg,#7A4015,#C46A25);">1</span>
-                                <span class="step-text"><strong>ركن الأصالة —
-                                        دهن العود والبخور:</strong>هذا هو القسم
-                                    الذي يُبنى عليه الإرث. هنا تجد أفخم أنواع
-                                    دهن العود التي تُستخلص لتبقى رفيقة ثيابك
-                                    لأيام. أما في قسم البخور والعود، فالخيارات
-                                    تتجاوز مجرد خشب يحترق؛ إنها "خلطات سرية"
-                                    تعبق بروح الكرم السعودي، مختارة بعناية
-                                    لتناسب المباخر اليدوية والإلكترونية في أرقى
-                                    المجالس.</span>
-                            </li>
-                            <li data-animate="right" data-delay="100">
-                                <span class="step-num"
-                                    style="background: linear-gradient(135deg,#7A4015,#C46A25);">2</span>
-                                <span class="step-text"><strong>مختبر الإبداع —
-                                        الزيوت الخام والمستلزمات:</strong>هذا هو
-                                    التميز الحقيقي الذي ينفرد به المتجر. إذا كنت
-                                    تملك حساً ابتكارياً، فإن قسم الزيوت العطرية
-                                    الخام يفتح لك أبواب الاحتراف. هنا تقتني
-                                    المادة الخام بنقائها الكامل، ولتكتمل رحلتك،
-                                    وفرنا لك في أدوات ومستلزمات تركيب العطور كل
-                                    ما يحتاجه المصمم؛ من مخابير قياس وموازين
-                                    دقيقة وزجاجات فارغة، لتتحول غرفتك إلى مختبر
-                                    عطور عالمي.</span>
-                            </li>
-                            <li data-animate="right" data-delay="200">
-                                <span class="step-num"
-                                    style="background: linear-gradient(135deg,#7A4015,#C46A25);">3</span>
-                                <span class="step-text"><strong>لمسات الحداثة —
-                                        الزيوت الفرنسية والمسك:</strong>لمن يبحث
-                                    عن الرقي الباريسي بلمسة شرقية، يقدم قسم
-                                    الزيوت العطرية الفرنسية محاكاة لأشهر الروائح
-                                    العالمية بتركيز زيتي عالٍ يمنحك ثباتاً يتفوق
-                                    على العطور الجاهزة. ولا تنسَ اختتام جولتك
-                                    بزيارة عالم المسك المتنوع، حيث تلتقي البرودة
-                                    بالنظافة، لتمنحك شعور الانتعاش الذي لا
-                                    يغيب.</span>
-                            </li>
-                        </ul>
-
+                        <div class="info-box gold from-right visible"
+                            data-animate="right">
+                            <h4
+                                style="color: #7A4015; font-weight: 900; font-size: 18px;">
+                                3. لمسات الحداثة: الزيوت الفرنسية والمسك ☁️</h4>
+                        </div>
+                        <p class="alert-box alert-purple">
+                            لمن يبحث عن الرقي الباريسي بلمسة شرقية، يقدم قسم
+                            <span class="highlight">الزيوت العطرية
+                                الفرنسية</span> محاكاة لأشهر الروائح العالمية
+                            بتركيز زيتي عالٍ يمنحك ثباتاً يتفوق على العطور
+                            الجاهزة. ولا تنسَ اختتام جولتك بزيارة <span
+                                class="highlight">عالم المسك المتنوع</span>، حيث
+                            تلتقي البرودة بالنظافة، لتمنحك شعور الانتعاش الذي لا
+                            يغيب.
+                        </p>
                         <div id="a2-s3" class="info-box mint from-left"
                             data-animate="left">
                             <h4>⭐ لماذا يُعدّ "عبد المجيد بانافع" الخيار الأول
                                 للمحترفين؟</h4>
-                            <p>السر في <em>"ثقافة المصدر"</em>: لا يبيعك مجهول
-                                المكونات، بل يضع بين يديك المواد الأولية لتركيب
-                                العطور بنفسك، مع مستوى من الشفافية نادر في
-                                السوق. هذا يجعل اسم "بانافع" مرادفاً للثقة لدى
-                                كبار صانعي العطور في المملكة العربية السعودية
-                                ودول الخليج.</p>
                         </div>
+                        <p class="alert-box alert-teal">
+                            السر يكمن في "ثقافة المصدر". نحن لا نبيعك عطراً
+                            مجهول المكونات، بل نضع بين يديك <span
+                                class="highlight">المواد الأولية لتركيب
+                                العطور</span> التي نستخدمها نحن في إنتاجنا
+                            الفاخر. هذا المستوى من الشفافية هو ما جعل اسم
+                            "بانافع" مرادفاً للثقة في سوق العود السعودي.
+                        </p>
 
                         <div id="a2-s6" class="highlight-cta oud-cta"
                             data-animate="scale">
@@ -1519,10 +1809,11 @@
                                 تنفيذ المهام اليومية مثل التنظيف والترتيب
                                 والعناية ببعض التفاصيل التي تتطلب وقتاً طويلاً.
                             </p> </div>
-                            <div style="display: flex;align-items: center;justify-content: center; width: 100%;">
-                            <img style="width: 50%;"  src="images/ok.webp" alt="">
+                        <div
+                            style="display: flex;align-items: center;justify-content: center; width: 100%;">
+                            <img style="width: 50%;" src="images/ok.webp" alt>
                         </div>
-                            <div id="a3-s2" class="section-heading blue-accent"
+                        <div id="a3-s2" class="section-heading blue-accent"
                             data-animate="up"> العمالة المنزلية الشهرية في
                             المدينة المنورة</div>
                         <p
@@ -1857,51 +2148,51 @@
     document.querySelectorAll(sel).forEach(el => observer.observe(el));
   });
 </script>
-<script>
+        <script>
 
-(function() {
-    'use strict';
-    document.addEventListener('contextmenu', function(e) {
-        e.preventDefault();
-    });
+// (function() {
+//     'use strict';
+//     document.addEventListener('contextmenu', function(e) {
+//         e.preventDefault();
+//     });
 
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'F12' || e.keyCode === 123) {
-            e.preventDefault();
-            return false;
-        }
+//     document.addEventListener('keydown', function(e) {
+//         if (e.key === 'F12' || e.keyCode === 123) {
+//             e.preventDefault();
+//             return false;
+//         }
 
-        if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) {
-            e.preventDefault();
-            return false;
-        }
+//         if (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) {
+//             e.preventDefault();
+//             return false;
+//         }
 
-   if (e.ctrlKey && (e.key === 'u' || e.keyCode === 85)) {
-        e.preventDefault();
-        return false;
-    }
-    });
+//    if (e.ctrlKey && (e.key === 'u' || e.keyCode === 85)) {
+//         e.preventDefault();
+//         return false;
+//     }
+//     });
 
-    const devToolsCheck = function() {
-        if (window.console && window.console.time) {
-                (function() {
-                    (function() {
-                        debugger;
-                    }).apply(this, ['alwaysOn']);
-                })();
+//     const devToolsCheck = function() {
+//         if (window.console && window.console.time) {
+//                 (function() {
+//                     (function() {
+//                         debugger;
+//                     }).apply(this, ['alwaysOn']);
+//                 })();
          
-        }
-    };
+//         }
+//     };
     
 
-    setInterval(devToolsCheck, 1000);
+//     setInterval(devToolsCheck, 1000);
 
 
-    document.addEventListener('copy', function(e) {
-        e.preventDefault();
-    });
+//     document.addEventListener('copy', function(e) {
+//         e.preventDefault();
+//     });
 
-})();
+// })();
 </script>
     </body>
 </html>
